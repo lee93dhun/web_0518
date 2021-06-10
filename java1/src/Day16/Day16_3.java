@@ -34,7 +34,8 @@ public class Day16_3 {
 			map.put("1", new User() );
 			map.put("2", new User() );
 		set.add( map );
-		System.out.println("깃허브 테스트 ");
+
+		
 	}
 	
 }
