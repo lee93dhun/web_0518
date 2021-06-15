@@ -2,6 +2,6 @@ package Day20;
 
 public class Day20_1 {
 	
-	// Day19 ~ Day20 : ÇÁ·ÎÁ§Æ® ÁøÇà
+	// Day19 ~ Day20 : í”„ë¡œì íŠ¸ ì§„í–‰
 
 }
