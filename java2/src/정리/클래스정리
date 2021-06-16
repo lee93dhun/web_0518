@@ -1,0 +1,35 @@
+
+
+
+	// 클래스 
+		1. Class : 클래스 정보 
+			1. Class.forName("패키지명.클래스명");
+				예) Class class2 = Class.forName("Day01.Car");
+		2. String : 문자열 클래스 
+			1. .charAt() : 해당 인덱스의 문자열 추출 
+			2. .equals("비교문자") : 문자열 비교 
+			3. .getBytes() : 문자열 => 바이트열 
+			4. .indexOf("검색단어") : 해당 문자 검색의 인덱스 위치 
+			5. .length() : 문자의 수 
+			6. .replace("기존문자" , "새로운문자" ) : 특정문자 교체 
+			7. .substring(인덱스) : 인덱스 위치부터 자르기 
+			8. .split("기준문자") : 기준문자 기준으로 분해 
+			9. .toLowerCase()
+			10 .toUpperCase()
+			11 .valueOf( 값 ) : 값 => 문자열 변환 
+				Integer.parseInt(문자)
+				Boolean.parseBoolean(문자2);
+				Double.parseDouble(문자3);
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
