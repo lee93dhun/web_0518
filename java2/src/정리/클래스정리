@@ -20,6 +20,7 @@
 				Integer.parseInt(문자)
 				Boolean.parseBoolean(문자2);
 				Double.parseDouble(문자3);
+		3. Math : 수학 클래스  
 				
 				
 				
