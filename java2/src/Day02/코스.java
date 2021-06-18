@@ -18,5 +18,19 @@ public class 코스 <매개클래스> {
 		}
 		
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public 매개클래스[] get목록() {
+		return 목록;
+	}
+	public void set목록(매개클래스[] 목록) {
+		this.목록 = 목록;
+	}
+	
+	
 
 }

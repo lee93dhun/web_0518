@@ -15,7 +15,5 @@ public class »ç¶÷ {
 		this.name = name;
 	}
 	
-	
-
 
 }
