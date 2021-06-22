@@ -3,6 +3,8 @@ package Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Start;
+import domain.Member;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -58,11 +60,19 @@ public class LoginController implements Initializable {
     void login(ActionEvent event) {
     	loading.setVisible(true);
     		// 텍스트상자.getText() : 텍스트에 입력된 데이터 호출
-    	if( txtid.getText().equals("qwe") && txtpassword.getText().equals("qwe") ) {
-    		System.out.println("로그인 성공");
-    	}else {
-    		System.out.println("로그인 실패");
+
+    	// 입력된 회원과 기존회원과 비교해서 로그인 
+    	for( Member temp : Start.memberlist ) {
+    		//  임시객체 : 리스트명 
+    				// 리스트내 객체수만큼 하나씩 임시객체에 대입 
+    		if( temp.getId().equals( txtid.getText() )  
+    				&& temp.getPassword().equals( txtpassword.getText() ) ) {
+    			System.out.println(" 로그인 성공 ");
+    			return;
+    		}  		
     	}
+    	System.out.println(" 로그인 실패 ");
+    	
     }
     
     

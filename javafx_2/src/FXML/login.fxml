@@ -40,22 +40,22 @@
       <Label fx:id="lblfindpassword" layoutX="252.0" layoutY="335.0" onMouseClicked="#findpassword" text="Find Password" textFill="#908c8c" />
       <ImageView fx:id="loading" fitHeight="45.0" fitWidth="42.0" layoutX="189.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../로딩.gif" />
+            <Image url="@로딩.gif" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="60.0" layoutX="50.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../암호.png" />
+            <Image url="@암호.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="56.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../회원.png" />
+            <Image url="@회원.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="97.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../로고.jpg" />
+            <Image url="@로고.jpg" />
          </image>
       </ImageView>
    </children>
