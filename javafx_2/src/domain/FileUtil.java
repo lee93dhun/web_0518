@@ -1,9 +1,12 @@
 package domain;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class FileUtil {
@@ -38,10 +41,67 @@ public class FileUtil {
 		}
 		
 		return null;  // 오류 발생시 null 반환 
-
-		
 	}
-	//				
+	
+	
+	// 리스트를 파일로 넣기 
+		// 1. String -> stream[ 외부장치와 데이터 전송 ] 
+		// 2. stream : 이동단위 : 바이트단위 
+	
+	public static void writefile( String dir , String filename , ArrayList<Member> memberlist ) {
+									// 1.파일경로		2. 파일명 		3. 저장할 리스트 
+		
+		// 1. 파일경로 유무 확인 
+		File file = new File(dir); // 경로를 파일클래스에 넣기 
+		if( file.exists() ) { // 경로가 없으면 
+			file.mkdir();	// 해당 경로에 폴더 생성 
+		}
+		File file2 = new File( dir , filename ); // 경로에 있는 해당 파일 가져오기 
+		try {
+			OutputStream outputStream = new BufferedOutputStream( new FileOutputStream(file2) );
+			for( Member temp : memberlist ) {
+				
+				// 1. 객체의 필드 구분
+				String out = temp.getId() + "," + temp.getPassword() + "," + temp.getName() +"," + temp.getEmail()+"\n";
+				// 2. 바이트로 변환 
+				byte[] b = out.getBytes();
+				// 3. 바이트 내보내기 
+				outputStream.write(b);
+				
+			} // 모든 리스트의 객체가 내보내기 종료
+			outputStream.close(); // 스트림 종료 
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

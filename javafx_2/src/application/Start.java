@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Start extends Application {
@@ -25,9 +26,14 @@ public class Start extends Application {
 				new File("C:/Users/User/git/web_0518/javafx_2/src/File/", "memberlist.txt"));
 
 		Parent parent = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
+		
 		Scene scene = new Scene(parent);
 		stage.setScene(scene);
+		stage.setResizable(false); // stage 크기 고정 
+		stage.setTitle("Nike"); // stage 상단 이름 
+			// stage.getIcons().add( new Image("/FXML/icon.png"));
 		stage.show();
+		
 	}
 	
 	public static void main(String[] args) {
