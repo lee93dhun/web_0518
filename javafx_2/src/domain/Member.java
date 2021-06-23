@@ -1,5 +1,9 @@
 package domain;
 
+import java.util.Properties;
+
+
+
 public class Member {
 	
 	private String id;
@@ -12,12 +16,12 @@ public class Member {
 	}
 
 	public Member(String id, String password, String name, String email) {
-		super();
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 	}
+
 
 	public String getId() {
 		return id;

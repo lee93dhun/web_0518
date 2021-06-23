@@ -53,7 +53,21 @@ public class LoginController implements Initializable {
 
     @FXML
     void findid(MouseEvent event) {
-
+    	
+    	try {
+			Parent parent = FXMLLoader.load(getClass().getResource("/FXML/findid.fxml"));
+			
+			Scene scene = new Scene( parent );
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.setTitle("Nike Find ID");
+			stage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     @FXML
