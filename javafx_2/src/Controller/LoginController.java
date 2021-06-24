@@ -72,6 +72,21 @@ public class LoginController implements Initializable {
 
     @FXML
     void findpassword(MouseEvent event) {
+    	
+    	try {
+			Parent parent = FXMLLoader.load(getClass().getResource("/FXML/findpassword.fxml"));
+			
+			Scene scene = new Scene( parent );
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.setResizable(false);
+			stage.setTitle("Nike Find Passowrd");
+			stage.show();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
 

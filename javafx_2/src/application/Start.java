@@ -31,7 +31,7 @@ public class Start extends Application {
 		stage.setScene(scene);
 		stage.setResizable(false); // stage 크기 고정 
 		stage.setTitle("Nike"); // stage 상단 이름 
-			// stage.getIcons().add( new Image("/FXML/icon.png"));
+
 		stage.show();
 		
 	}

@@ -57,5 +57,8 @@
             <Image url="@로고.jpg" />
          </image>
       </ImageView>
+
    </children>
+
 </AnchorPane>
+
