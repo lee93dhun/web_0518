@@ -12,15 +12,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
+	
+	// 로그인 성공시 main컨트롤에게 로그인성공한 id 넘기기 
+	
+	private static LoginController instance; // 임시객체
+	
+	public LoginController() {
+		instance = this;
+	}
+	
+	public static LoginController getintance() {
+		return instance;
+	}
+	public String getid() {
+		return txtid.getText();
+	}
+	
 	// FXML 제어 하는 클래스 
 	
 	@Override  // FXML 초기값 
@@ -101,11 +119,33 @@ public class LoginController implements Initializable {
     				// 리스트내 객체수만큼 하나씩 임시객체에 대입 
     		if( temp.getId().equals( txtid.getText() )  
     				&& temp.getPassword().equals( txtpassword.getText() ) ) {
-    			System.out.println(" 로그인 성공 ");
+    			
+    			// 로그인 성공시 현재 창 닫기 => 새로운 main 스테이지 열기 
+    			
+    		 	// 스테이지 끄기  : 현재 속한 컨트롤명
+    			btnlogin.getScene().getWindow().hide();
+    			
+    			try {
+    				Stage stage = new Stage();
+    				Parent parent = FXMLLoader.load(getClass().getResource("/FXML/main.fxml"));
+    				Scene scene = new Scene(parent);
+    				stage.setScene(scene);
+    				stage.show();
+    			}
+    			catch (Exception e) {
+					// TODO: handle exception
+				}
+    			
+    			
     			return;
     		}  		
     	}
-    	System.out.println(" 로그인 실패 ");
+    	
+		// 메세지 창 띄우기 
+		Alert alert = new Alert( AlertType.INFORMATION);
+		alert.setContentText(" 회원님의 아이디 혹은 비밀번호가 다릅니다 ");
+		alert.setHeaderText("로그인 실패");
+		alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
     	
     }
     
