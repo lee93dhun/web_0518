@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import DAO.MemberDao;
 import application.Start;
 import domain.Member;
 import javafx.event.ActionEvent;
@@ -112,40 +113,73 @@ public class LoginController implements Initializable {
     void login(ActionEvent event) {
     	loading.setVisible(true);
     		// 텍스트상자.getText() : 텍스트에 입력된 데이터 호출
-
-    	// 입력된 회원과 기존회원과 비교해서 로그인 
-    	for( Member temp : Start.memberlist ) {
-    		//  임시객체 : 리스트명 
-    				// 리스트내 객체수만큼 하나씩 임시객체에 대입 
-    		if( temp.getId().equals( txtid.getText() )  
-    				&& temp.getPassword().equals( txtpassword.getText() ) ) {
-    			
-    			// 로그인 성공시 현재 창 닫기 => 새로운 main 스테이지 열기 
-    			
-    		 	// 스테이지 끄기  : 현재 속한 컨트롤명
-    			btnlogin.getScene().getWindow().hide();
-    			
-    			try {
-    				Stage stage = new Stage();
-    				Parent parent = FXMLLoader.load(getClass().getResource("/FXML/main.fxml"));
-    				Scene scene = new Scene(parent);
-    				stage.setScene(scene);
-    				stage.show();
-    			}
-    			catch (Exception e) {
-					// TODO: handle exception
-				}
-    			
-    			
-    			return;
-    		}  		
+														//
+														//    	// 입력된 회원과 기존회원과 비교해서 로그인 
+														//    	for( Member temp : Start.memberlist ) {
+														//    		//  임시객체 : 리스트명 
+														//    				// 리스트내 객체수만큼 하나씩 임시객체에 대입 
+														//    		if( temp.getId().equals( txtid.getText() )  
+														//    				&& temp.getPassword().equals( txtpassword.getText() ) ) {
+														//    			
+														//    			// 로그인 성공시 현재 창 닫기 => 새로운 main 스테이지 열기 
+														//    			
+														//    		 	// 스테이지 끄기  : 현재 속한 컨트롤명
+														//    			btnlogin.getScene().getWindow().hide();
+														//    			
+														//    			try {
+														//    				Stage stage = new Stage();
+														//    				Parent parent = FXMLLoader.load(getClass().getResource("/FXML/main.fxml"));
+														//    				Scene scene = new Scene(parent);
+														//    				stage.setScene(scene);
+														//    				stage.show();
+														//    			}
+														//    			catch (Exception e) {
+														//					// TODO: handle exception
+														//				}
+														//    			
+														//    			
+														//    			return;
+														//    		}  		
+														//    	}
+    	
+    	// db 로그인 
+    		// 1. dao 객체 만들기 
+    	MemberDao memberDao = MemberDao.getMemberDao();
+    		// 2. login 메소드 호출 
+    	int result = memberDao.login( txtid.getText() , txtpassword.getText() );
+    								// 로그인창에 입력된 아이디 , 입력된 패스워드 
+    		// 3. 결과 제어 
+    	if( result == 1 ) {
+    	 	 //스테이지 끄기  : 현재 속한 컨트롤명
+			btnlogin.getScene().getWindow().hide();
+			
+			try {
+				Stage stage = new Stage();
+				Parent parent = FXMLLoader.load(getClass().getResource("/FXML/main.fxml"));
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				stage.show();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}	
+			
+    	}else if( result == 2 ) {
+    		// 메세지 창 띄우기 
+    		Alert alert = new Alert( AlertType.INFORMATION);
+    		alert.setContentText(" 회원님의 아이디 혹은 비밀번호가 다릅니다 ");
+    		alert.setHeaderText("로그인 실패");
+    		alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
+    	}
+    	else {
+			Alert alert = new Alert( AlertType.INFORMATION);
+			alert.setContentText(" [데이터베이스 오류] 관리자에게 문의 ");
+			alert.setHeaderText("회원가입 실패");
+			alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
     	}
     	
-		// 메세지 창 띄우기 
-		Alert alert = new Alert( AlertType.INFORMATION);
-		alert.setContentText(" 회원님의 아이디 혹은 비밀번호가 다릅니다 ");
-		alert.setHeaderText("로그인 실패");
-		alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
+    	
+	
     	
     }
     

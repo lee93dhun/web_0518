@@ -3,6 +3,7 @@ package Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import DAO.MemberDao;
 import application.Start;
 import domain.FileUtil;
 import domain.Member;
@@ -75,19 +76,41 @@ public class SignupController implements Initializable {
     		lblerror.setText("가입실패 : 이메일 형식이 아닙니다 ");
 			return;
     	}
-    	lblerror.setText("회원가입 완료 : 가입해주셔서 감사합니다 ");
     	
     	Member temp = new Member(id, passowrd, name, email);
     	Start.memberlist.add(temp);
-    	// 파일 처리 [ 리스트 => 파일 ] 
-    		FileUtil.writefile("C:/Users/User/git/web_0518/javafx_2/src/File/", "memberlist.txt",  Start.memberlist );
-			// 메세지 창 띄우기 
+
+    	// 회원가입시 입력된 데이터를 DB에 넣기 
+    		// 1. DAO 객체 생성 
+    	MemberDao memberDao = MemberDao.getMemberDao();
+    	
+    		// 2. DAO 회원가입 메소드 호출 
+    	int result = memberDao.setmember(temp);
+    	
+    		// 3. 반환 제어 
+    	if( result == 1 ) {
+    		lblerror.setText("회원가입 완료 : 가입해주셔서 감사합니다 ");
+    		// 메세지 창 띄우기 
     			Alert alert = new Alert( AlertType.INFORMATION);
     			alert.setContentText(" 가입해주셔서 감사합니다 ");
  				alert.setHeaderText("회원가입 성공");
     			alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
     	// 스테이지 끄기 
     		btnsignup.getScene().getWindow().hide();
+    		
+    	}else {
+    		lblerror.setText("회원가입 실패 : [데이터베이스 오류] 관리자에게 문의 ");
+    		// 메세지 창 띄우기 
+    			Alert alert = new Alert( AlertType.INFORMATION);
+    			alert.setContentText(" [데이터베이스 오류] 관리자에게 문의 ");
+ 				alert.setHeaderText("회원가입 실패");
+    			alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 
+    	}
+    	
+    	
+    	// 파일 처리 [ 리스트 => 파일 ] 
+    		// FileUtil.writefile("C:/Users/User/git/web_0518/javafx_2/src/File/", "memberlist.txt",  Start.memberlist );
+
     }
    
 	@Override
