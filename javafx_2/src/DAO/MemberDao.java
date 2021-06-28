@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import domain.Member;
+
 
 public class MemberDao {
 	
@@ -101,6 +103,67 @@ public class MemberDao {
 		}
 		return 0; // db 오류 
 	}
+	
+	// 모든 회원 목록 
+	public ArrayList<Member> allmember(){
+			// 타입타입 : 리스트
+		// 찾은 회원을 담을 리스트 
+		ArrayList<Member> members = new ArrayList<Member>();
+	
+		// 1. SQL 작성 
+		String SQL = "select * from member";
+				// select 필드명 from 테이블명 ; => 모든 필드 검색 
+		try {
+			// 2. 연결된 DB에 SQL 조작하기 
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			
+			// 3. sql 실행 => 결과
+			ResultSet resultSet = statement.executeQuery();
+			
+			// 4. 검색 결과을 리스트에 담기 
+			while( resultSet.next() ) {
+				
+				Member member = new Member();
+			
+				member.setId(  resultSet.getString(2) );
+				member.setPassword( resultSet.getString(3));
+				member.setName( resultSet.getString(4));
+				member.setEmail( resultSet.getString(5));
+			
+				members.add(member);
+			}
+			
+		}
+		catch (Exception e) {}
+		// 리스트 반환 
+		return members; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

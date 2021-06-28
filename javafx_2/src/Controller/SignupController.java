@@ -1,6 +1,7 @@
 package Controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import DAO.MemberDao;
@@ -51,20 +52,27 @@ public class SignupController implements Initializable {
     @FXML
     void signup(ActionEvent event) {
     	
+    	// 회원가입시 입력된 데이터를 DB에 넣기
     	String id = txtid.getText();
     	String passowrd = txtpassword.getText();
     	String passowrd2 = txtpassword2.getText();
     	String name = txtname.getText();
     	String email = txtemail.getText();
     	
-    
+    	// 1. DAO 객체 생성 
+    	MemberDao memberDao = MemberDao.getMemberDao();
+    	
+    	// 2. 모든 회원을 가져오기 
+    	ArrayList<Member> members = memberDao.allmember();
+    	
     	// 1. 중복아이디 제거 
-    	for( Member temp : Start.memberlist ) {
+    	for( Member temp : members ) {
     		if( temp.getId().equals(id) ) {
     			lblerror.setText("가입실패 : 동일한 아이디가 존재합니다 ");									
     			return;
     		}
     	}
+    	
     	// 2. 패스워드 , 확인패스워드가 동일하지 않을경우
     	if( !passowrd.equals(passowrd2) ) {
     		lblerror.setText("가입실패 : 패스워드가 서로 다릅니다 ");
@@ -78,11 +86,7 @@ public class SignupController implements Initializable {
     	}
     	
     	Member temp = new Member(id, passowrd, name, email);
-    	Start.memberlist.add(temp);
-
-    	// 회원가입시 입력된 데이터를 DB에 넣기 
-    		// 1. DAO 객체 생성 
-    	MemberDao memberDao = MemberDao.getMemberDao();
+    	
     	
     		// 2. DAO 회원가입 메소드 호출 
     	int result = memberDao.setmember(temp);

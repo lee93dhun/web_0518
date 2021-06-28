@@ -16,14 +16,14 @@ public class Start extends Application {
 
 	// 씬빌더 => FXML 파일 작성 => JAVA 가져오기
 	
-	public static ArrayList< Member > memberlist = new ArrayList<>();
+//	public static ArrayList< Member > memberlist = new ArrayList<>();
 	
 	@Override
 	public void start(Stage stage) throws Exception {
 	
 		// FXML 첫 실행시 파일 가져오기 
-		memberlist = FileUtil.readfile( 
-				new File("C:/Users/User/git/web_0518/javafx_2/src/File/", "memberlist.txt"));
+//		memberlist = FileUtil.readfile( 
+//				new File("C:/Users/User/git/web_0518/javafx_2/src/File/", "memberlist.txt"));
 
 		Parent parent = FXMLLoader.load(getClass().getResource("/FXML/login.fxml"));
 		

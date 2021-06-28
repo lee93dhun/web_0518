@@ -1,8 +1,10 @@
 package Controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import DAO.MemberDao;
 import application.Start;
 import domain.Member;
 import javafx.event.ActionEvent;
@@ -40,7 +42,13 @@ public class FindidController implements Initializable {
     	String name = txtname.getText();
     	String email = txtemail.getText();
     	
-    	for( Member temp : Start.memberlist ) {
+       	// 1. DAO 객체 생성 
+    	MemberDao memberDao = MemberDao.getMemberDao();
+    	
+    	// 2. 모든 회원을 가져오기 
+    	ArrayList<Member> members = memberDao.allmember();
+    	
+    	for( Member temp : members ) {
     		if( temp.getName().equals(name) && temp.getEmail().equals(email) ) {
     			lblerror.setText("찾으신 아이디를 이메일로 전송했습니다");
     			String id = temp.getId();
