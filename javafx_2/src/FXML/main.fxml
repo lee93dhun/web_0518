@@ -7,10 +7,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:controller="Controller.MainController" fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
    <center>
-      <AnchorPane fx:id="cp" prefHeight="601.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="cp" prefHeight="517.0" prefWidth="770.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER" />
    </center>
    <left>
       <AnchorPane fx:id="lp" prefHeight="548.0" prefWidth="228.0" style="-fx-background-color: #B4E5FF;" BorderPane.alignment="CENTER">
@@ -52,7 +51,7 @@
                </font>
             </Button>
             <Line endX="100.0" layoutX="114.0" layoutY="450.0" startX="-100.0" />
-            <Label layoutX="39.0" layoutY="478.0" prefHeight="28.0" prefWidth="159.0" text="고객센터 : 000 - 000 -000" />
+            <Label layoutX="35.0" layoutY="464.0" prefHeight="28.0" prefWidth="159.0" text="고객센터 : 000 - 000 -000" />
             <Label fx:id="lbllogin" layoutX="37.0" layoutY="14.0" prefHeight="30.0" prefWidth="106.0" text="Label" />
             <Button fx:id="btnlogout" layoutX="150.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #B4E5FF;" text="Logout" />
          </children>

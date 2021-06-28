@@ -22,7 +22,17 @@ import javafx.stage.Stage;
 
 public class MainController implements Initializable {
 
+	private static MainController instance; // 해당 클래스에 객체 만들기 
+ 	
+	public MainController() {
+		instance = this;
+	}
 	
+	public static MainController getinstance() {
+		return instance;
+	}
+	
+
 	private String loginid; // 로그인된 아이디를 저장할 변수 선언 
 	
 	@Override
@@ -129,7 +139,7 @@ public class MainController implements Initializable {
     
     
     // 가운데 레이아웃변경 
-    private void loadpage( String page ) {
+    public void loadpage( String page ) {
     	try {
     		Parent parent = FXMLLoader.load(getClass().getResource( "/FXML/"+page+".fxml"));
     		borderpane.setCenter(parent);

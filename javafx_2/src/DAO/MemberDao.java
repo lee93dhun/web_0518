@@ -140,6 +140,107 @@ public class MemberDao {
 	}
 	
 	
+	// 아이디에 해당하는 회원정보 반환
+	public Member getmember( String logid) {
+		
+		// 0. 임시 회원
+		Member member = new Member();
+		// 1. SQL 작성 
+		String SQL = "select * from member where id=?";
+		// 2. SQL 조작 
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+				statement.setString( 1 , logid );
+		// 3.SQL 실행 
+			ResultSet resultSet = statement.executeQuery();
+		// 4. 실행 결과 
+			if( resultSet.next() ) {
+				member.setId( resultSet.getString(2) );
+				member.setPassword( resultSet.getString(3) );
+				member.setName( resultSet.getString(4));
+				member.setEmail( resultSet.getString(5));
+				return member; // 해당하는 아이디의 회원이 있을경우
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return null ; // 해당하는 아이디의 회원이 없을경우 
+	}
+	
+	// 해당하는 아이디의 회원 삭제 메소드 
+	public int deletemember( String logid) {
+		
+		// 1. SQL 작성 
+		String SQL = "select * from member where id=?";
+		// 2. SQL 조작 
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setString(1, logid);
+			// 3. SQL 실행 
+			ResultSet resultSet = statement.executeQuery();
+			// 4. SQL 결과 
+			if( resultSet.next() ) {
+				// 탈퇴 SQL 
+				SQL = "delete from member where id=?";
+				statement = conn.prepareStatement(SQL);
+				statement.setString(1, resultSet.getString(2) );
+				statement.executeUpdate();
+				return 1; // 삭제 성공 
+			}else {
+				return 2; // 회원정보가 없음 실패
+			}
+		}catch (Exception e) {	}
+		return 0; // db 오류 
+	}
+	
+	// 회원 업데이트 메소드 
+	public int updatemember( Member member ) {
+		
+		// 1. SQL 작성
+		String SQL = "update member set name =? , email = ? where id = ?";
+		//2. SQL 조작
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setString(1, member.getName() );
+			statement.setString(2, member.getEmail() );
+			statement.setString(3, member.getId() );
+			//3.SQL 실행
+			statement.executeUpdate();
+			//4.SQL 결과
+			return 1; // 변경 성공
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0; // 실패 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

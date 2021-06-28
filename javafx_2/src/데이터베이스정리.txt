@@ -25,8 +25,14 @@
 					// insert into 테이블명(필드명1,필드명2,필드명3,필드명4) values( 값1, 값2, 값3, 값4 ) 
 
 			2. 삭제		delete
+				// 삭제
+				// delete from 테이블명 where 조건
 			3. 업데이트	update 
 			4. 검색 		select
+				// 검색 
+				// selete 검색필드[*:모든필드] from 테이블명 where 조건
+				
+				
 				
 		DCL
 
