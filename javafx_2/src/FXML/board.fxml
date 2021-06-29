@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="814.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Contoller.BoardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="814.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BoardController">
    <children>
       <Label layoutX="58.0" layoutY="27.0" prefHeight="26.0" prefWidth="113.0" text="공지사항">
          <font>
@@ -24,7 +24,7 @@
             <TableColumn prefWidth="112.0" text="조회수" />
         </columns>
       </TableView>
-      <Button fx:id="btnwrite" layoutX="680.0" layoutY="40.0" mnemonicParsing="false" onAction="#write" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: #ffffff;" text="글 쓰기">
+      <Button fx:id="btnwrite" layoutX="680.0" layoutY="27.0" mnemonicParsing="false" onAction="#write" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: #ffffff;" text="글 쓰기">
          <effect>
             <DropShadow />
          </effect>

@@ -12,9 +12,17 @@ public class Board {
 	
 	// 생성자1 : 빈생성자 
 	public Board() {}
-	// 생성자2 : 모든 필드를 받는 생성자 
+	// 생성자2 : 모든 필드를 받는 생성자 [ db 호출용 ]
 	public Board(int bno, String btitle, String bcontents, String bwriter, String bdate, int bcount) {
 		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontents = bcontents;
+		this.bwriter = bwriter;
+		this.bdate = bdate;
+		this.bcount = bcount;
+	}
+	// 생성자3 : 게시물 번호[bno]를 제외한 생성 [ db 삽입용 ] 
+	public Board( String btitle, String bcontents, String bwriter, String bdate, int bcount) {
 		this.btitle = btitle;
 		this.bcontents = bcontents;
 		this.bwriter = bwriter;

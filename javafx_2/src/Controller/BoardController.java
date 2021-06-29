@@ -20,7 +20,9 @@ public class BoardController implements Initializable {
 
     @FXML
     void write(ActionEvent event) {
-
+    	
+    	// 쓰기 버튼을 눌렀을때 => 화면전환 
+    	MainController.getinstance().loadpage("boardwrite");
     }
 	
 	@Override
