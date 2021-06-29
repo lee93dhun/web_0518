@@ -9,10 +9,10 @@ import domain.Board;
 public class BoardDao {
 	
 	Connection conn; // DB와 연결해주는 인터페이스 선언 
-	private static BoardDao memberDao = new BoardDao(); // 현재 클래스의 객체 
+	private static BoardDao boardDao = new BoardDao(); // 현재 클래스의 객체 
 	
-	public static BoardDao getMemberDao() {	// dao 객체를 반환해주는 메소드 
-		return memberDao;
+	public static BoardDao getBoardDao() {	// dao 객체를 반환해주는 메소드 
+		return boardDao;
 	}
 	
 	public BoardDao() { // 생성자 : 객체의 초기값 
@@ -51,6 +51,8 @@ public class BoardDao {
 		}catch (Exception e) {}
 		return 0; // 실패시 
 	}
+	// 모든 게시물 출력 메소드 
+	
 	
 	
 	

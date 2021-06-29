@@ -10,9 +10,11 @@ import domain.Board;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class BoardwriteController implements Initializable {
 
@@ -37,12 +39,10 @@ public class BoardwriteController implements Initializable {
 
     @FXML
     void cancel(ActionEvent event) {
-    	// board 이동 
-    	
+    	MainController.getinstance().loadpage("board");
     }
     @FXML
     void write(ActionEvent event) {
-    	
     	String btitle = txttitle.getText();
     	String bcontents = txtcontents.getText();
     	String bwriter= LoginController.getintance().getid() ; // 로그인된 아이디 
@@ -53,16 +53,20 @@ public class BoardwriteController implements Initializable {
     	Board board = new Board(btitle, bcontents, bwriter, bdate, 0);
     	
     	// 1. Dao 객체 생성 
-    	BoardDao boardDao = BoardDao.getMemberDao();
+    	BoardDao boardDao = BoardDao.getBoardDao();
     	// 2. Dao 메소드 실행 
     	int result =  boardDao.boardwrie(board);
     	
     	if( result == 1 ) { // 성공
-    		// board 이동 
-    		
+    		MainController.getinstance().loadpage("board");
     	}
     	else {  // 실패
-    		
+    		// 메세지 창 띄우기 
+    		Alert alert = new Alert( AlertType.INFORMATION);
+    		alert.setContentText(" [ 등록실패 ] 관리자에게 문의 : 000-0000-0000 ");
+    		alert.setHeaderText(" 게시물 등록 실패");
+    		alert.showAndWait(); // 확인 버튼 누르기전까지 대기상태 	
+    		MainController.getinstance().loadpage("board");
     	}
     }
 
