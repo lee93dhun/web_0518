@@ -19,6 +19,23 @@ import javafx.scene.input.MouseEvent;
 
 public class BoardController implements Initializable {
 	
+	// 현재 클래스의 객체 
+	private static BoardController instance;
+	// 객체 생성자
+	public BoardController() {
+		instance = this;
+	}
+	// 객체 반환 메소드 
+	public static BoardController getinstance() {
+		return instance;
+	}
+	// 테이블에서 클릭된 게시물 반환 메소드
+	public Board getboard() {
+		return board;
+	}
+	
+	private static Board board; // 게시물 객체 
+	
 
     @FXML
     private TableView<Board> tableview;
@@ -65,11 +82,17 @@ public class BoardController implements Initializable {
 			
 			if( event.getButton().equals( MouseButton.PRIMARY) ) {
 				// selectionmodel : 선택된 항목 
-				System.out.println( tableview.getSelectionModel().getSelectedItem() );
+				board =  tableview.getSelectionModel().getSelectedItem();
+				board.setBcount( board.getBcount()+1 );
+				// 조회수 증가 메소드
+				boardDao.addcount(board);
+			
 				// 화면 전환 
+				MainController.getinstance().loadpage("boardview");
+			
+
 			}
 		} );
-
 	}
 	
 	
