@@ -50,7 +50,7 @@ public class BoardwriteController implements Initializable {
     		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
     	String bdate = format.format(date);
     	
-    	Board board = new Board(btitle, bcontents, bwriter, bdate, 0);
+    	Board board = new Board( btitle , bcontents, bwriter, bdate, 0);
     	
     	// 1. Dao °´Ã¼ »ý¼º 
     	BoardDao boardDao = BoardDao.getBoardDao();

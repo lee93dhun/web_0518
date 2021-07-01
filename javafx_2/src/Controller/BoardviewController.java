@@ -93,7 +93,28 @@ public class BoardviewController implements Initializable {
 
     @FXML
     void update(ActionEvent event) {
-
+    	MainController.getinstance().loadpage("boardupdate");
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
