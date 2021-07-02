@@ -103,7 +103,6 @@ public class PlistController implements Initializable {
 				lblpcontents.setText( product.getPcontents() );
 				
 				// 이미지
-					
 				try {
 					// 이미지가 없는경우 예외처리 발생
 					Image image = new Image( product.getPimage() );
