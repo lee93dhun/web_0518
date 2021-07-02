@@ -54,10 +54,10 @@ public class PsumController implements Initializable {
 			SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd");
 			String todaydate = format.format( calendar.getTime() );	
 			
-			calendar.add( calendar.DATE, -1);
+			calendar.add( calendar.DATE, -1); // 뒤로 1일 이동
 			String yesterdaydate = format.format(  calendar.getTime() ) ;
 			
-			calendar.add( calendar.DATE, +1);
+			calendar.add( calendar.DATE, +2); // 앞으로 2일 이동 
 			String nextdaydate = format.format(  calendar.getTime() ) ;
 			
 		today.setName(todaydate);
