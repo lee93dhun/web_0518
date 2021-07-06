@@ -1,6 +1,7 @@
 package application;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 
 public class Client {
@@ -40,8 +41,36 @@ public class Client {
 	}
 	// 메시지 보내는 메소드 
 	public void send( String msg ) {
+		Runnable thread = new Runnable() {
+			@Override
+			public void run() {
+				
+				try {
+					OutputStream outputStream = socket.getOutputStream();
+					byte[] buffer = msg.getBytes(); // 해당 메소드로 들어온[인수] 메시지를 바이트로 변환 
+					
+					outputStream.write(buffer);
+					outputStream.flush(); // 버퍼 초기화 [ 데이터가 쌓이는 경우 버퍼 초기화하기 ] 
+					
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+		}; // 쓰레드 end
 	
+		// 해당 쓰레드를 스레드풀에 적용하기 
+		ServerController.threadpool.submit(thread);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
