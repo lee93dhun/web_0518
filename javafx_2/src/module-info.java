@@ -12,4 +12,7 @@ module javafx_2 {
 	opens Controller to javafx.graphics, javafx.fxml , javafx.controls;
 	opens domain to activation , mail , javafx.base;
 	opens DAO to java.sql;
+	
+
+
 }

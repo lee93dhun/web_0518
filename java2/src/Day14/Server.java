@@ -57,7 +57,6 @@ public class Server {
 				바이트 = 메시지.getBytes();
 				보내기.write(바이트);
 				System.out.println("[ 메시지 전송 성공 ]");
-
 			}
 		}
 		catch (Exception e) {
