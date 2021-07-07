@@ -11,8 +11,8 @@ public class Client {
 	
 	public Client( Socket socket) {
 		this.socket = socket;
+		receive();
 	}
-	
 	// 메시지 받는 메소드 [ 무한루프 ] 
 	public void receive() {
 		Runnable thread = new Runnable() {

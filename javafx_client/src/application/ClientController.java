@@ -28,6 +28,7 @@ public class ClientController implements Initializable {
 			public void run() {
 				try {
 					socket = new Socket("127.0.0.1" ,1234);
+					receive();
 				}
 				catch (Exception e) {}
 			}
