@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<style type="text/css">
+	
+		@font-face {
+	   	 	font-family: 'BinggraeSamanco-Bold';
+	    	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco-Bold.woff') format('woff');
+	    	font-weight: normal;
+	    	font-style: normal;
+		}
+	
+		h2{
+			font-family: "궁서";  	/*현재 pc에 설치된 글꼴*/
+			color: blue;
+			text-decoration: overline line-through underline;	/*밑줄*/
+			text-align: center; /*정렬*/
+			text-shadow: -10px 3px 20px orange; /*그림자*/
+		}
+		p{
+			font-family: 'BinggraeSamanco-Bold';	/*웹폰트*/
+			color: white; /*글꼴색*/
+			background-color: green; /*배경색*/
+	
+			font-size: 30px; /*글자 크기*/
+			font-style: italic; /*기울기*/
+			font-weight: bold;	/*글자 굵게*/
+			
+			line-height: 200%; /*줄간격*/
+			letter-spacing: 10px;	/*글자간격 :자간*/
+			word-spacing: 10px;	/*단어간격 : 어간*/			
+		}
+		span {
+			font-size: 50px;
+		}
+		
+		a:link{  /* 링크 설정 */
+			color: green;
+			text-decoration: none; /*밑줄제거*/
+		}
+		a:hover {	/*마우스를 올렸을때*/
+			color: orange;
+			text-decoration: none;
+		}
+		a:visited { /* 링크를 1번이라도 클릭했을경우 */
+			color: red;
+			text-decoration: none;
+		}
+		a:active {  /* 클릭했을때 */
+			color: blue;
+			text-decoration: none;
+		}
+	
+	</style>
+
+</head>
+<body>
+
+	HTML : 문서 	<br> 
+	CSS : 스타일 시트 <br>
+	<p> head 태그 안에서 style 선언 
+	<p> 선택자 : 꾸미기 대상 
+	<p>	1. 태그명{  속성 = "속성값";  }
+	<p> 2. .클래스명{ 속성 = "속성값";  }
+	<p> 3. #id명{ 속성 = "속성값";  } 
+		<p> 우선순위 : id > 클래스 > 태그
+		
+	<p> 글꼴 관련 속성 
+		1. font-family =" 글꼴명 "
+		2. color : 글꼴색 
+			// 1. 색이름 , 헥스값 , RGB 
+					[https://htmlcolorcodes.com/color-picker/]
+			background-color : 배경색
+			
+		3. text-decoration : 밑줄 
+		4. text-align : 텍스트 정렬
+		5. text-shadow: x축 , y축 , 흐름정도 , 색상 
+		6. 
+			font-size:  /*글자 크기*/
+			font-style:  /*기울기*/
+			font-weight: 	/*글자 굵게*/
+			
+			line-height:  /*줄간격*/
+			letter-spacing: 	/*글자간격 :자간*/
+			word-spacing: 	/*단어간격 : 어간*/		
+		
+	<h2> 강아지 </h2>
+	
+	<p> 개는 중형 동물이자 가장 널리 분포하며 개체 수가 가장 많은 <span>지상 동물</span>이며, 
+	학명은 Canis lupus familiaris이다. 개는 인류가 최초로 가축으로 삼은 동물로 알려져 있으며
+	, 역사적으로 애완견, 사냥견으로서 길러 왔다 </p>
+	
+	묶음 태그 
+	<span>앞 태그 이어쓰기 inline</span>
+	<div>앞 태그와 줄바꿈 block </div>
+	
+	하이퍼링크  <br>
+	<a href="https://www.naver.com/"> 네이버 바로가기 </a>	<br>
+	<a href="https://www.daum.net/"> 다음 바로가기 </a>		<br>
+	<a href="https://www.google.co.kr/"> 구글 바로가기 </a>	<br>
+	
+	
+
+</body>
+</html>
