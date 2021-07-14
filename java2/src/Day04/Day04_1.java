@@ -7,7 +7,7 @@ public class Day04_1 {
 		// javaGUI
 			// GUI : awt , swing , fx
 		
-		// 설치
+		/* 설치
 		0. 이클립스에서 javafx 설치
 		 	1. 이클립스 메뉴 => [Help] → [Eclipse Marketplace]을 클릭하여 [Eclipse Marketplace]
 		 	2. fx 검색 => e(fx) => 인스톨 => 이클립스 재시작 [ 강제 재시작 x ]
@@ -24,6 +24,7 @@ public class Day04_1 {
 	 		1. 링크 : https://gluonhq.com/products/scene-builder/
 	 		2. Windows Installer 64-bit 다운로드
 	 		3. 설치
+	 		*/
 
 	 	
 	}
