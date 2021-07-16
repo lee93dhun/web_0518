@@ -38,11 +38,18 @@
 <body >
 	<ul id="menuul" >
 		<li class="menuli"> <a href="menu.jsp">회사 소개</a> </li>
-		<li class="menuli"> <a href="#">제품 소개</a> </li>
+		<li class="menuli"> <a href="product.jsp">제품 소개</a> </li>
 		<li class="menuli"> <a href="board.jsp">고객 센터</a> </li>
 		<li class="menuli"> <a href="login.jsp">로그인</a> </li>
-		<li class="menuli"> <a href="#">회원가입</a> </li>
-		<li class="menuli"> <a href="#">찾아 오시는길</a> </li>
+		<li class="menuli"> <a href="signup.jsp">회원가입</a> </li>
+		<li class="menuli"> <a href="direction.jsp">찾아 오시는길</a> </li>
 	</ul>
 </body>
 </html>
+
+
+
+
+
+
+

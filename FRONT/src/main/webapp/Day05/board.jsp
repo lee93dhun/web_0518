@@ -27,6 +27,7 @@
 		textarea {
 			width: 500px;
 			height: 100px;
+			resize: none;		/* 크기조절 기능제거 */
 		}
 		#buttons{
 			width: 600px;
@@ -36,7 +37,6 @@
 		button {
 			padding: 5px 20px;
 			margin-left: 10px;
-			
 			margin-top: 30px;
 		}
 		
