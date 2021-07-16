@@ -16,17 +16,16 @@
 			font-family: 'WandohopeB';
 		}
 		#menuul{
-			background-color: skyblue;
 			padding: 15px;
 			text-align: center;
 			color: white;
+			border-bottom: solid 1px black;
 		}
 		.menuli{
 			display: inline;
 			margin-left: 20px;
 		}
 		a{
-			color: white;
 			text-decoration: none;
 		}
 		a:hover {
@@ -37,7 +36,7 @@
 </head>
 <body >
 	<ul id="menuul" >
-		<li class="menuli"> <a href="menu.jsp">회사 소개</a> </li>
+		<li class="menuli"> <a href="info1.jsp">회사 소개</a> </li>
 		<li class="menuli"> <a href="product.jsp">제품 소개</a> </li>
 		<li class="menuli"> <a href="board.jsp">고객 센터</a> </li>
 		<li class="menuli"> <a href="login.jsp">로그인</a> </li>

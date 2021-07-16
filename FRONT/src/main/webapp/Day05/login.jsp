@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 
 	<style type="text/css">
+		h3{
+			text-align: center;
+		}
 		form{
 			width: 400px;
 			margin: 0 auto;  /* 가로 가운데 정렬 */
@@ -26,7 +29,9 @@
 </head>
 <body>
 		<%@include file="menu.jsp" %>
+			<h3> 로그인 폼</h3>
 		<form>
+		
 			<table>
 				<tr>
 					<td> 아이디 </td>
