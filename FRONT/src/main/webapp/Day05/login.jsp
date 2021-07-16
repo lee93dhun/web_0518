@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 
 	<style type="text/css">
-	
 		form{
 			width: 400px;
 			margin: 0 auto;  /* 가로 가운데 정렬 */
@@ -23,17 +22,11 @@
 		table{
 			margin-top: 50px;
 		}
-
 	</style>
-	
-
 </head>
 <body>
-
 		<%@include file="menu.jsp" %>
-
 		<form>
-		
 			<table>
 				<tr>
 					<td> 아이디 </td>
