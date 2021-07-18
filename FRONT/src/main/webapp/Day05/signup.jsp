@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +63,7 @@
 
 </head>
 <body>
-
+	<%@include file="menu.jsp" %>
 	<h3> 회원가입 폼 </h3>
 
 	<form>
