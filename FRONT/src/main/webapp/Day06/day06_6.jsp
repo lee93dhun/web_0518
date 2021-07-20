@@ -117,23 +117,6 @@
 			</li>
 		</ul>
 	</div>
-	
-		<div class="items1">
-		<ul>
-			<li class="i1"> <img alt="" src="수박.jpg"></li>
-			<li class="i2"> 초콜릿 스타일링 </li>
-			<li class="i3"> 간식용 수제 초콜릿 </li>
-			<li class="i4"> 
-				<div>
-					<span class="s1"> 2023.03.10 </span>
-					<span class="s2"> 좋아요 3 </span>
-				</div>
-			</li>
-		</ul>
-	</div>
-
-
-
 
 
 
