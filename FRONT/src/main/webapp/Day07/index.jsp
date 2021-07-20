@@ -10,12 +10,12 @@
 		
 		/* 레이아웃*/
 		*{ margin: 0; padding: 0; }
-		header{ height: 150px; border: solid 1px red;}
-		.box{ width: 1100px; margin: 0 auto;  border: solid 1px blue; }
-		#main_image{ height: 200px; border: solid 1px red; }
-		aside{ width: 250px;  float: left; border: solid 1px green;   }
-		#main{ width: 840px;  float: right; border: solid 1px green;  }
-		footer{ height: 150px; clear: both; border: solid 1px red;}
+		header{ height: 150px; }
+		.box{ width: 1100px; margin: 0 auto;   }
+		#main_image{ height: 200px;  }
+		aside{ width: 250px;  float: left;   }
+		#main{ width: 840px;  float: right;   }
+		footer{ height: 300px; clear: both; background-color:#05354e; color: white; }
 		
 		/* 헤더 */
 		#logo{ float: left; margin: 40px 0 0 20px; }
@@ -53,6 +53,15 @@
 		aside .ripple{ padding: 15px;}
 		aside .ripple h2{ font-size: 20px; margin: 10px 0px;}
 		aside .ripple li{ margin-top: 5px; }
+		
+		/* 푸터 */
+		#bottom_menu ul{ padding: 20px 0 0 100px;  font-weight: bold;}
+		#bottom_menu li{ display: inline; margin-right: 50px; }
+		footer .items{ float: left; margin: 40px 0 0 100px;}
+		footer h3{ color: orange; }
+		footer .items ul{ margin-top: 20px; }
+		footer .items li{ margin-top: 5px; }
+		
 	</style>
 	
 
@@ -132,7 +141,55 @@
 	</div>
 	<footer>
 		<div class="box">
-			푸터
+			
+			<div id="bottom_menu">
+				<ul>
+					<li> THE 나이키 소개 </li>
+					<li> 개인정보처리방침 </li>
+					<li> 저작권 정보 </li>
+					<li> 이용 안내 </li>
+				</ul>
+			</div>
+			
+			<div class="items">
+				<h3> 문의 전화 </h3>
+					<ul>
+						<li> 123-1234 </li>
+						<li> 10:00 ~ 18:00(Lunch 12:00 ~ 13:00)</li>
+					</ul>
+			</div>
+			<div class="items">
+				<h3> The 나이키 </h3>
+					<ul>
+						<li> 주소 : 123-1234-1234 </li>
+						<li> 전화 : 123-1234-1234 </li>
+						<li> 팩스 : 123-1234-1234 </li>
+						<li> 이메일 : 123-1234-1234 </li>
+					</ul>
+			</div>
+			<div class="items">
+				<h3> 입금 정보 </h3>
+					<ul>
+						<li> 농협 123-123-123456 </li>
+						<li> The 나이키</li>
+					</ul>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+			
 		</div>
 	</footer>
 </body>
