@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+	<!--  css 파일 불러오기  -->
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>

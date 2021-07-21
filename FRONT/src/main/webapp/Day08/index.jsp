@@ -14,6 +14,7 @@
 	<section class="box">
 		<div id="sub_menu">
 			<h3> 사진이론 </h3>
+				
 				<ul>
 					<li>카메라 동작 원리 </li>
 					<li>무조건 찍어보자!</li>
