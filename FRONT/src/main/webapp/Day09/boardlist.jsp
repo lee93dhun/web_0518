@@ -20,9 +20,9 @@
 	<%@include file="menu.jsp" %>
 	
 	
-	<div class="container">
+	<div class="container" style="margin-top: 100px;">
 	
-			<table class="table table-striped" style="margin-top: 100px;" >
+			<table class="table table-striped"  >
 							<!--  행마다 구별용 -->
 				<thead>
 					<tr>
