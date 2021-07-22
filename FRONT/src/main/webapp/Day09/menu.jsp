@@ -13,17 +13,17 @@
 
 	<style type="text/css">
 	
-
-		   @font-face {
-		    font-family: 'Eulyoo1945-SemiBold';
-		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Eulyoo1945-SemiBold.woff') format('woff');
+		@font-face {
+		    font-family: 'CookieRunOTF-Bold';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
 		    font-weight: normal;
 		    font-style: normal;
 		}
-		
-					
-	
-		*{ font-family: Eulyoo1945-SemiBold  }
+				
+				*{
+					  font-family: 'CookieRunOTF-Bold';
+				
+				}
 		
 		.navbar-nav li a{ font-size: 15px; color: black;  }
 	
@@ -45,7 +45,7 @@
 				</button>
 			
 			
-				<img alt="" src="logo.png" style="width: 130px; padding: 15px;">
+				<a href="main.jsp"> <img alt="" src="logo.png" style="width: 130px; padding: 15px;"> </a> 
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				
@@ -102,7 +102,7 @@
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
-					<li> <a href="#" style="font-size: 10px;"> 공지사항 </a> </li>
+					<li> <a href="boardlist.jsp" style="font-size: 10px;"> 공지사항 </a> </li>
 					<li> <a href="#" style="font-size: 10px;"> 로그인 </a> </li>
 					<li> <a href="#" style="font-size: 10px;"> 회원가입</a> </li>
 					<li> <a href="#" style="font-size: 10px;"> 로그아웃</a> </li>
