@@ -32,7 +32,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;" >
 		<div class="container">
 			<div class="navbar-header">
 			
