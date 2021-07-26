@@ -148,7 +148,7 @@
 	
 	<%
 		// jsp에 미리 만들어진 객체  
-			// 요청객체 : request 객체  [ HttpServletRequest 클래스의 객체 ]
+			// 요청객체 : request 내장객체  [ HttpServletRequest 클래스의 객체 ]
 			// 응답객체 
 		
 		// 요청 인코딩 타입 : EUC-KR 혹은 UTF-8 
