@@ -1,0 +1,13 @@
+jsp : html 내 태그 이용한 java 작성
+	1. 태그
+		1. <%! 선언문 %> : 전역변수 , 메소드 
+		2. <%  스크립트문 %> : java 실행코드 
+		3. <%= 표현식 %> : 출력 
+		4. <%@ 지시자 %> : 페이지 속성
+	
+	2. 내장객체 
+		1. 요청객체 : request 객체 [ 매개변수 요청 ] 
+			1. request.setCharacterEncoding("UTF-8") 혹은 "EUC-KR"
+			2. request.getParameter("매개변수이름")
+			3. request.getParameterNames() : 모든 매개변수 이름 요청 
+			4. request.getParameterValues("매개변수이름") : 매개변수의 모든 값 요청
