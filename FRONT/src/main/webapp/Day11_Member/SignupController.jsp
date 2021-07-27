@@ -1,3 +1,4 @@
+<%@page import="Dao.MemberDao"%>
 <%@page import="Dto.Member"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.HashSet"%>
@@ -34,12 +35,17 @@
 		String adress3 = request.getParameter("adress3");
 		String adress4 = request.getParameter("adress4");
 		String adress5 = request.getParameter("adress5");
-		String madress = adress1 +","+adress2+","+adress3+","+adress4+","+adress5;
+		String maddress = adress1 +","+adress2+","+adress3+","+adress4+","+adress5;
 		
 		// 객체 => db 
-		Member member = new Member( mid , mpassword , mname , memail , mphone , madress );
+		Member member = new Member( mid , mpassword , mname , memail , mphone , maddress );
 		
-		out.print( member.getMadress());
+		MemberDao memberDao = MemberDao.getinstance();
+		
+		memberDao.signup(member);
+		
+		
+		
 		
 									/* 	// Enumeration 인터페이스 : 순서가 없는 여러개의 항목을 하나씩 순회 
 										Enumeration<String> enumeration =  request.getParameterNames();
