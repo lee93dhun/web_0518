@@ -57,8 +57,23 @@ public class MemberDao {
 		
 	}
 	
-	
-	
+	// 2. 로그인 메소드 
+	public int login( String mid , String mpassword ) {
+		
+		String SQL ="select * from member where mid =? and mpassword = ? ";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setString(1, mid );
+			statement.setString(2, mpassword );
+			
+			rs = statement.executeQuery();
+			
+			if( rs.next() ) { return 1; }
+		}
+		catch (Exception e) {}
+		return 0 ;
+	}
 	
 	
 	
