@@ -102,6 +102,16 @@
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
+					<% 
+						// day11 로그인컨트롤에서 세션 부여 받은후 코드 
+						
+						String logid = (String)session.getAttribute("logid");
+						if( logid !=null){
+						%>
+							<li> <%=logid %>님 안녕하세요 </li>
+						<%	
+						}
+					%>
 					<li> <a href="boardlist.jsp" style="font-size: 10px;"> 공지사항 </a> </li>
 					<li> <a href="#" style="font-size: 10px;"> 로그인 </a> </li>
 					<li> <a href="#" style="font-size: 10px;"> 회원가입</a> </li>

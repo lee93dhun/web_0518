@@ -42,8 +42,20 @@
 		
 		MemberDao memberDao = MemberDao.getinstance();
 		
-		memberDao.signup(member);
+		int result =  memberDao.signup(member);
 		
+		if( result == 1 ){
+			
+			// 로그인페이지로 이동 
+			// 1. 
+			response.sendRedirect("Login.jsp");
+			
+		}
+		else{
+			
+			// 전페이지로 이동 
+			response.sendRedirect("Signup.jsp");
+		}
 		
 		
 		
