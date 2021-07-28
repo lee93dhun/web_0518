@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import Dto.Board;
 
@@ -50,6 +51,72 @@ public class BoardDao {
 		return 0;
 	}
 	
+	// 2. 모든 게시물 출력 메소드 
+	public ArrayList<Board> blist(){
+		
+		ArrayList<Board> boards = new ArrayList<Board>();
+		
+		String SQL = "select * from board"; // 조건없이 모두 검색 
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			resultSet = statement.executeQuery();
+			
+			while( resultSet.next() ) {
+				
+				Board board = new Board(resultSet.getInt(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getInt(6));
+				
+				boards.add(board);
+			}	
+			return boards;
+		}catch (Exception e) {}
+		
+		return null;
+	}
+	
+	// 3. 게시물번호를 이용한 게시물 출력 메소드 
+	public Board bview( int bno ) {
+		
+		String SQL = "select * from board where bno = ? ";
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, bno );
+			
+			resultSet = statement.executeQuery();
+			
+			if( resultSet.next() ) {
+				Board board = new Board(resultSet.getInt(1),
+						resultSet.getString(2), 
+						resultSet.getString(3), 
+						resultSet.getString(4), 
+						resultSet.getString(5), 
+						resultSet.getInt(6));
+				return board;
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+	
+	// 4. 게시물번호를 이용한 게시물 삭제 메소드 
+	public int bdelete( int bno) {
+		
+		String SQL = "Delete from board where bno = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, bno);
+			statement.executeUpdate();
+			return 1 ;
+		}catch (Exception e) {	}
+		return 0 ;
+	}
 	
 	
 	

@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<h3> 글쓰기 페이지 </h3>
+		<a href="boardlist.jsp"><button>글목록</button></a>
 	<form method="post" action="boardwritecontroller.jsp">
 		제목 : <input type="text" name="btitle" size="50"> <br>
 		작성자 :<input type="text" name="bwriter" size="10"> <br>
