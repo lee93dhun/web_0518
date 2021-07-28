@@ -31,7 +31,8 @@
 		%>
 		<tr> <!-- for문이용한 출력  -->
 			<td><%=board.getBno() %></td>
-			<td><%=board.getBtitle() %></td>
+			<td><a href="boardview.jsp?bno=<%=board.getBno()%>"><%=board.getBtitle() %></a> </td>
+			<!-- 링크에 매개변수 보내기 : href="파일명?변수명=값"-->
 			<td><%=board.getBwriter() %></td>
 			<td><%=board.getBdate() %></td>
 			<td><%=board.getBcount() %></td>

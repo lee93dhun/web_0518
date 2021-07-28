@@ -78,6 +78,32 @@ public class BoardDao {
 		return null;
 	}
 	
+	// 3. 게시물번호를 이용한 게시물 출력 메소드 
+	public Board bview( int bno ) {
+		
+		String SQL = "select * from board where bno = ? ";
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, bno );
+			
+			resultSet = statement.executeQuery();
+			
+			if( resultSet.next() ) {
+				Board board = new Board(resultSet.getInt(1),
+						resultSet.getString(2), 
+						resultSet.getString(3), 
+						resultSet.getString(4), 
+						resultSet.getString(5), 
+						resultSet.getInt(1));
+				return board;
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+		
+	}
 	
 	
 	
