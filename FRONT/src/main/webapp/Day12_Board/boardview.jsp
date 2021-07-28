@@ -23,7 +23,7 @@
 	%>
 	<a href="boardlist.jsp"><button>格废</button> </a>
 	<a href="#"><button>荐沥</button> </a>
-	<a href="#"><button>昏力</button> </a>
+	<a href="boarddeletecontroller.jsp?bno=<%=bno%>"><button>昏力</button> </a>
 	<table border="1">
 		<tr>
 			<td colspan="3"> 力格 :  <%=board.getBtitle() %> </td>

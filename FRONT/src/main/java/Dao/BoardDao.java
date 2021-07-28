@@ -94,7 +94,7 @@ public class BoardDao {
 						resultSet.getString(3), 
 						resultSet.getString(4), 
 						resultSet.getString(5), 
-						resultSet.getInt(1));
+						resultSet.getInt(6));
 				return board;
 			}
 			
@@ -102,7 +102,20 @@ public class BoardDao {
 			// TODO: handle exception
 		}
 		return null;
+	}
+	
+	// 4. 게시물번호를 이용한 게시물 삭제 메소드 
+	public int bdelete( int bno) {
 		
+		String SQL = "Delete from board where bno = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, bno);
+			statement.executeUpdate();
+			return 1 ;
+		}catch (Exception e) {	}
+		return 0 ;
 	}
 	
 	
