@@ -103,7 +103,7 @@
 				
 				<ul class="nav navbar-nav navbar-right">
 					<% 
-						// day11 로그인컨트롤로 세션 부여 받은후 코드 
+						// day11 로그인컨트롤에서 세션 부여 받은후 코드 
 						
 						String logid = (String)session.getAttribute("logid");
 						if( logid !=null){
