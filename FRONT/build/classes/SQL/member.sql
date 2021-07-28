@@ -18,8 +18,8 @@ create table jspweb.board(
     bno int primary key auto_increment , 
     btitle varchar(100) not null , 
     bcontents varchar(5000) ,
-    bwriter varbinary(10) ,
-    bdate varchar(10) not null ,
+    bwriter varchar(100) ,
+    bdate varchar(100) not null ,
     bcount int 
     
 )

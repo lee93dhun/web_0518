@@ -1,3 +1,4 @@
+<%@page import="Dao.BoardDao"%>
 <%@page import="Dto.Board"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -30,6 +31,18 @@
 		Board board = new Board( btitle , bcontents , bwriter , bdate , 0 ); // 조회수는 0 
 	%>
 	<!-- 3.DB에 저장하기  -->
+	<%
+		BoardDao boardDao = BoardDao.getinstance();
+		boardDao.bwrite(board);
+	%>
 	<!-- 4.다른페이지로 이동 -->
 </body>
 </html>
+
+
+
+
+
+
+
+
