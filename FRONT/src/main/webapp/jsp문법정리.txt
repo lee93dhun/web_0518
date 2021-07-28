@@ -5,6 +5,13 @@ DB 연동
 		2. 프로젝트에서 라이브러리 => classpath에서 라이브러리 추가 
 	2.
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:포트번호/DB명?serverTimezone=UTC", "DB계정명" , "DB비밀번호" );
+	
+
+* DB 연동 실패 했을때 
+	1. 라이브러리 유무 
+	2. DB 연동 URL 
+	3. SQL 오타 확인 
+	4. 객체 문제 확인
 
 
 jsp : html 내 태그 이용한 java 작성
