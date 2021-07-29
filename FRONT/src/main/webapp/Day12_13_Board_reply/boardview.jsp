@@ -75,7 +75,7 @@
 	 			<td><%=reply.getRwriter() %></td>	
 	 			<td><%=reply.getRcontents() %></td>		
 	 			<td><%=reply.getRdate() %></td>
-	 			<td> <a href="#"> <button>삭제</button> </a>
+	 			<td> <a href="replydeletecontroller.jsp?rno=<%=reply.getRno()%>&bno=<%=bno%>"> <button>삭제</button> </a>
 	 			<td> <a href="#"> <button>수정</button> </a>
 	 		</tr>
 	 	<%	

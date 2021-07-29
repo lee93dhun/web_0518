@@ -193,7 +193,19 @@ public class BoardDao {
 		
 	}
 	// 8. ¥Ò±€ ªË¡¶ 
-	
+	public int rdelete( int rno ) {
+		
+		String SQL = "Delete from reply where rno = ?";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setInt(1, rno);
+			statement.executeUpdate();
+			return 1 ;
+		}catch (Exception e) {	}
+		return 0 ;
+		
+	}
 	
 	
 	
