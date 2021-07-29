@@ -1,3 +1,5 @@
+<%@page import="Dto.Reply"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Dto.Board"%>
 <%@page import="Dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -57,15 +59,59 @@
 		<!-- 현재 게시물번호 [댓글 식별용] --> <input type="hidden" value="<%=bno%>" name="bno">
 		
 	</form>
-	
+
 	 <hr>
 	 <br>
 	 <h4> 댓글 목록 </h4>
 	 <table>
 	 	<tr>
-	 		<td>작성자</td>	<td>댓글내용</td>		<td>작성일</td>
+	 		<td>작성자</td><td>내용</td><td>작성일</td> <td>비고</td>
 	 	</tr>
+	 	<%
+	 		ArrayList<Reply> replies = boardDao.rlist(bno);
+	 		for( Reply reply : replies ){
+	 	%>		
+	 		<tr>
+	 			<td><%=reply.getRwriter() %></td>	
+	 			<td><%=reply.getRcontents() %></td>		
+	 			<td><%=reply.getRdate() %></td>
+	 			<td> <a href="#"> <button>삭제</button> </a>
+	 			<td> <a href="#"> <button>수정</button> </a>
+	 		</tr>
+	 	<%	
+	 		}
+	 	%>
+	 
 	 </table>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 </body>
 </html>
