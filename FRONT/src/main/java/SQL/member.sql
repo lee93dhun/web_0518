@@ -23,3 +23,14 @@ create table jspweb.board(
     bcount int 
     
 )
+
+create table jspweb.reply(
+
+	rno int primary key auto_increment ,
+    bno int not null ,
+    rwriter varchar(100) ,
+    rcontents varchar(1000) ,
+    rdate varchar(100) ,
+    
+    foreign key( bno ) references board( bno )  
+)

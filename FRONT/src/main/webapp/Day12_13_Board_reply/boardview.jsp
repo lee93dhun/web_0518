@@ -17,9 +17,7 @@
 		// 2. 게시물번호에 해당하는 db 검색해서 출력 
 		BoardDao boardDao = BoardDao.getinstance();
 		Board board  = boardDao.bview(bno);
-		
-		
-		
+
 	%>
 	<a href="boardlist.jsp"><button>목록</button> </a>
 	<a href="boardupdate.jsp?bno=<%=bno%>"><button>수정</button> </a>
@@ -38,12 +36,21 @@
 		<tr>
 			<td colspan="3"> 내용 : <%=board.getBcontents() %> </td> 
 		</tr>
-		
-		
+
 	</table>
 	
+	<!--  댓글  -->
+	 <hr>
+	 <br>
+	<form action="replywritecontroller.jsp" method="post">
+		작성자 	내용  <br>
+		<input type="text" name="rwriter" size="10">
+		<textarea rows="" cols="50" name="rcontents"></textarea> <br>
+		<!-- 현재 게시물번호 [댓글 식별용] --> <input type="hidden" value="<%=bno%>" name="bno">
+		<input type="submit" value="등록">
+	</form>
 	
 	
-
+	
 </body>
 </html>
