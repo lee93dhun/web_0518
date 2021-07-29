@@ -118,6 +118,24 @@ public class BoardDao {
 		return 0 ;
 	}
 	
+	// 5. 게시물 내용 과 제목 업데이트 메소드 
+	public int bupdate( int bno , Board board ) {
+		
+		String SQL = "update board set btitle=? , bcontents=? where bno = ? ";
+		// update 테이블명 set 필드1=값1 , 필드2=값2 where 조건
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			statement.setString(1, board.getBtitle()  );
+			statement.setString(2, board.getBcontents());
+			statement.setInt( 3 , bno );
+			
+			statement.executeUpdate();
+			return 1;			
+		}
+		catch (Exception e) {} 
+		return 0;
+	}
+	
 	
 	
 	

@@ -31,6 +31,12 @@ public class Board {
 		this.bdate = bdate;
 		this.bcount = bcount;
 	}
+	
+	// DB에 수정할때 [ 게시물번호 , 날짜 , 조회수 제외 ] 
+	public Board( String btitle, String bcontents ) {
+		this.btitle = btitle;
+		this.bcontents = bcontents;
+	}
 
 	// private : 현재 클래스에서만 호출 가능 
 		// get , set 메소드 : 

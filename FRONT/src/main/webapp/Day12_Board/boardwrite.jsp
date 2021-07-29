@@ -13,7 +13,7 @@
 		제목 : <input type="text" name="btitle" size="50"> <br>
 		작성자 :<input type="text" name="bwriter" size="10"> <br>
 		내용 :  <textarea rows="10" cols="40" style="resize: none" name="bcontents"></textarea> <br>
-		<input type="submit" value="작성"> <input type="submit" value="취소">
+		<input type="submit" value="작성"> <input type="reset" value="취소">
 	</form>
 </body>
 </html>
