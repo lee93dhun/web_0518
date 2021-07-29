@@ -22,7 +22,7 @@
 		
 	%>
 	<a href="boardlist.jsp"><button>목록</button> </a>
-	<a href="#"><button>수정</button> </a>
+	<a href="boardupdate.jsp?bno=<%=bno%>"><button>수정</button> </a>
 	<a href="boarddeletecontroller.jsp?bno=<%=bno%>"><button>삭제</button> </a>
 	<table border="1">
 		<tr>
