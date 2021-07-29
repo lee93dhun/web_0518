@@ -41,16 +41,31 @@
 	
 	<!--  댓글  -->
 	 <hr>
-	 <br>
+	<h4> 댓글 쓰기 </h4>
 	<form action="replywritecontroller.jsp" method="post">
-		작성자 	내용  <br>
-		<input type="text" name="rwriter" size="10">
-		<textarea rows="" cols="50" name="rcontents"></textarea> <br>
+		
+		<table>
+			<tr>
+				<th>작성자</th> <th>내용</th> <td></td> 
+			</tr>
+			<tr>
+				<td> <input type="text" name="rwriter" size="10"> </td>
+				<td> <textarea rows="" cols="50" name="rcontents"></textarea> </td>
+				<td> <input type="submit" value="등록"> </td>
+			</tr>
+		</table>
 		<!-- 현재 게시물번호 [댓글 식별용] --> <input type="hidden" value="<%=bno%>" name="bno">
-		<input type="submit" value="등록">
+		
 	</form>
 	
-	
+	 <hr>
+	 <br>
+	 <h4> 댓글 목록 </h4>
+	 <table>
+	 	<tr>
+	 		<td>작성자</td>	<td>댓글내용</td>		<td>작성일</td>
+	 	</tr>
+	 </table>
 	
 </body>
 </html>

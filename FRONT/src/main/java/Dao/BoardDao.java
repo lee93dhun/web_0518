@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import Dto.Board;
+import Dto.Reply;
 
 public class BoardDao {
 	
@@ -137,10 +138,59 @@ public class BoardDao {
 	}
 	
 	// 6. 댓글 쓰기 메소드  
+	public int rwrite( Reply reply ) {
+		
+		String SQL = "insert into reply( bno , rwriter , rcontents , rdate)"+"values(?,?,?,?)";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			
+			statement.setInt(1, reply.getBno()  );
+			statement.setString(2, reply.getRwriter());
+			statement.setString(3, reply.getRcontents());
+			statement.setString(4, reply.getRdate());
+			
+			statement.executeUpdate();
+			
+			return 1; 
+			
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+		
+	}
 	
 	// 7. 게시물번호에 해당하는 댓글 출력 
 	
 	// 8. 댓글 삭제 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
