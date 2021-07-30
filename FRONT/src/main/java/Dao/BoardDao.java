@@ -207,6 +207,23 @@ public class BoardDao {
 		
 	}
 	
+	// 9. 게시물 조회수 증가 
+	public void bcountup( int bno) {
+		
+		String SQL = "update board set bcount = bcount + 1 where bno = ? ";
+		
+		try {
+			PreparedStatement statement = conn.prepareStatement(SQL);
+			
+			statement.setInt(1, bno);
+			
+			statement.executeUpdate();
+		
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 	
 	
 	
