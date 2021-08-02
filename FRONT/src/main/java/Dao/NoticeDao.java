@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import Dto.NoticeDto;
 
@@ -47,6 +48,59 @@ public class NoticeDao {
 		catch (Exception e) {} 
 		return 0;
 	}
+	
+	// 모든 게시물 출력 
+	public ArrayList<NoticeDto> noticelist(){
+		
+		ArrayList<NoticeDto> noticeDtos = new ArrayList<NoticeDto>();
+		
+		String SQL = "select * from notice";	
+		try {
+			PreparedStatement statement = connection.prepareStatement(SQL);
+			
+			resultSet = statement.executeQuery();
+			
+			while( resultSet.next() ) {
+				
+				NoticeDto noticeDto = new NoticeDto(
+						resultSet.getInt(1), 
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5), 
+						resultSet.getInt(6),
+						resultSet.getString(7));
+				noticeDtos.add(noticeDto);
+			}
+			return noticeDtos;
+		}
+		catch (Exception e) {
+		} 
+		return null;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

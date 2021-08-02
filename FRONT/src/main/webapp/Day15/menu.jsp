@@ -21,7 +21,19 @@
 	    	font-style: normal;
 		}
 		/* 모든 곳에 기본폰트 적용 */
-		*{ font-family: 'SF_HambakSnow';  }
+		*{ 
+			font-family: 'SF_HambakSnow';  
+			
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		a:hover {
+			text-decoration: none;
+			color: black;
+		}
+		
 	
 	</style>
 	
