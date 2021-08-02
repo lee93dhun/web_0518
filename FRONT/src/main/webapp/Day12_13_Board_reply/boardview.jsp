@@ -12,14 +12,19 @@
 </head>
 <body>
 
+
 	<%
 		// 1. 매개변수 요청 [ 기본타입 : String ] 
 		int bno = Integer.parseInt(request.getParameter("bno"));
 					// interger.parseint( 문자열 ) : 문자열 => 정수형 
+							
+				// 해당 페이지 요청 되었을경우 조회수 증가 
+				BoardDao boardDao = BoardDao.getinstance();
+				boardDao.bcountup(bno);
+									
 		// 2. 게시물번호에 해당하는 db 검색해서 출력 
-		BoardDao boardDao = BoardDao.getinstance();
 		Board board  = boardDao.bview(bno);
-
+		
 	%>
 	<a href="boardlist.jsp"><button>목록</button> </a>
 	<a href="boardupdate.jsp?bno=<%=bno%>"><button>수정</button> </a>
@@ -69,14 +74,16 @@
 	 	</tr>
 	 	<%
 	 		ArrayList<Reply> replies = boardDao.rlist(bno);
+	 	
+	 		
+	 	
 	 		for( Reply reply : replies ){
 	 	%>		
 	 		<tr>
 	 			<td><%=reply.getRwriter() %></td>	
 	 			<td><%=reply.getRcontents() %></td>		
 	 			<td><%=reply.getRdate() %></td>
-	 			<td> <a href="#"> <button>삭제</button> </a>
-	 			<td> <a href="#"> <button>수정</button> </a>
+	 			<td> <a href="replydeletecontroller.jsp?rno=<%=reply.getRno()%>&bno=<%=bno%>"> <button>삭제</button> </a>
 	 		</tr>
 	 	<%	
 	 		}
