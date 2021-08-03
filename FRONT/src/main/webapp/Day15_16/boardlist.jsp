@@ -34,10 +34,21 @@
 		 	
 		 	<tbody>
 		 		<%
+		 		
+		 		request.setCharacterEncoding("EUC-KR");
+		 		String key = request.getParameter("key");
+		 		String keyword = request.getParameter("keyword");
+		 		
 		 		NoticeDao noticeDao = NoticeDao.getinstance();
 		 		
-		 		ArrayList<NoticeDto>  noticeDtos = noticeDao.noticelist();
-		 		
+		 		ArrayList<NoticeDto> noticeDtos ;
+		 		// 검색이 없을경우 
+		 		if( key == null || keyword == null ){
+		 			noticeDtos = noticeDao.noticelist();
+		 		}else{ // 검색이 있는경우
+		 
+		 			noticeDtos = noticeDao.noticekeyword( key , keyword );
+		 		}
 		 		for( NoticeDto noticeDto : noticeDtos  ){
 		 		%>	
 		 			<tr>
@@ -72,14 +83,14 @@
 		 
 		 <a href="boardwrite.jsp" class="btn btn-info pull-right">글작성</a>
 		 
-		 <form>
+		 <form method="post" action="boardlist.jsp">
 		 	<table  style="margin: 0 auto;">
 		 		<tr>
 		 			<td>
 		 				<select name="key" class="form-control">
-		 					<option> 제목 </option>
-		 					<option> 내용 </option>
-		 					<option> 작성자 </option>
+		 					<option value="ntitle"> 제목 </option>
+		 					<option value="ncontents"> 내용 </option>
+		 					<option value="nwriter"> 작성자 </option>
 		 				</select>
 		 			</td>
 		 			<td>
