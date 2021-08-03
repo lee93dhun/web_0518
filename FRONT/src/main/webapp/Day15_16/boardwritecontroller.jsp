@@ -1,6 +1,6 @@
 
-<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="Dao.NoticeDao"%>
 <%@page import="Dto.NoticeDto"%>
@@ -21,12 +21,8 @@
 		// 2.업로드 된 파일을 저장할 폴더 경로 설정 
 		String realFolder = "C:/Users/User/git/web_0518/FRONT/src/main/webapp/upload";
 	
-		int 용량 = 1024*1024*10 ; 
-		
-		DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
-		
 		// 3.파일 요청 클래스 
-		MultipartRequest multi = new MultipartRequest( request , realFolder , 1024*1024*10 , "UTF-8" , new DefaultFileRenamePolicy() );
+		MultipartRequest multi = new MultipartRequest( request , realFolder , 1024*1024*10 , "UTF-8" ,new DefaultFileRenamePolicy() );
 																// 1. 요청방식 , 2.저장경로 , 3.파일최대용량[ 10mb ] , 4.인코딩타입 5. 보안[ 동일한 이름이 있을경우 파일명뒤에 숫자 붙여줌]
 																		// [ bit -> byte -> kb -> mb ]
 		// 4. form 태그 속성 enctype="multipart/form-data"

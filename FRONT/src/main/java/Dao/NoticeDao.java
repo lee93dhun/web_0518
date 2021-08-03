@@ -54,7 +54,9 @@ public class NoticeDao {
 		
 		ArrayList<NoticeDto> noticeDtos = new ArrayList<NoticeDto>();
 		
-		String SQL = "select * from notice";	
+		String SQL = "select * from notice order by nno DESC";	
+									// Order by 필드명 asc : 오름차순 
+									// Order by 필드명 desc : 내림차순 
 		try {
 			PreparedStatement statement = connection.prepareStatement(SQL);
 			
@@ -86,7 +88,7 @@ public class NoticeDao {
 
 		// String SQL = "select * from notice where "+key+" = "+keyword;
 		// 키워드가 포함된 필드 찾기
-		String SQL ="select * from notice where "+key+" like '%"+keyword+"%'";
+		String SQL ="select * from notice where "+key+" like '%"+keyword+"%' order by nno DESC";
 								//  필드명 = 찾을값			[ 해당 필드에서 값이 동일한 레코드 찾기  ]  
 								//  필드명 like '%찾을값%' 	[ 해당 필드에서 값이 포함된 레코드 찾기 ] 
 		
