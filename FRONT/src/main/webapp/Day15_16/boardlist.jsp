@@ -24,7 +24,7 @@
 		 	<thead>
 		 		<tr>
 		 			<th> 번호 </th>
-		 			<th> 이미지 </th>
+		 			<th> 대표 이미지 </th>
 		 			<th> 제목 </th>
 		 			<th> 작성자 </th>
 		 			<th> 작성일 </th>
@@ -53,7 +53,7 @@
 		 		%>	
 		 			<tr>
 		 				<td><%=noticeDto.getNno() %></td>
-		 				<td><%=noticeDto.getNfile() %></td>
+		 				<td> <img alt="" src="../upload/<%=noticeDto.getNfile() %>"  width="25px;"> </td>
 		 				<td width="700px;"><a href="#"> <%=noticeDto.getNtitle() %></a></td>
 		 				<td><%=noticeDto.getNwriter() %></td>
 		 				<%
