@@ -8,15 +8,19 @@
 </head>
 <body>
 
+	<% 
+		// 유효성검사 : js
+	%>
+
 	<%@include file="menu.jsp" %>
 				<!-- container width: 1200px -->
 	<div class="container">
 				
 		<h3> 글 작성 </h3>
-		<form method="post" action="boardwritecontroller.jsp">
+		<form name="boardform" method="post" action="boardwritecontroller.jsp" enctype="multipart/form-data" onsubmit="return boardcheck()">
 			<div style="margin-top: 30px;">
 				<label>제목</label>
-				<input type="text" class="form-control" name="title">
+				<input type="text" class="form-control" name="title" maxlength="30">
 			</div>
 			
 			<div style="margin-top: 30px;">
@@ -33,6 +37,43 @@
 			</div>
 		</form>
 	</div>
+	
+		<!-- 
+			HTML : 웹문서 
+			CSS : HTML 꾸미기 [ 스타일 시트 ]
+			JS : 
+		 -->
+	
+	<script type="text/javascript"> <!-- js[javascript] 유효성검사  -->
+		function boardcheck() {
+			// boardcheck 메소드 정의		
+			if( boardform.title.value.length == 0 ){
+				alert("제목을 입력해주세요"); // 메시지 창 띄우기 
+				return false;  
+			}
+			if( boardform.contents.value.length == 0 ){
+				alert("내용을 입력해주세요"); // 메시지 창 띄우기 
+				return false; 
+			}
+		}
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 </body>
 </html>
