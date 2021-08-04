@@ -30,6 +30,12 @@ public class NoticeDto {
 		this.ncount = ncount;
 		this.nfile = nfile;
 	}
+	// 게시물 수정시 
+	public NoticeDto(String ntitle, String ncontents, String nfile) {
+		this.ntitle = ntitle;
+		this.ncontents = ncontents;
+		this.nfile = nfile;
+	}
 	
 	public int getNno() {
 		return nno;
