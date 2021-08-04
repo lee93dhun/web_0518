@@ -1,58 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 	<% 
-		// À¯È¿¼º°Ë»ç : js
+		// ìœ íš¨ì„±ê²€ì‚¬ : js
 	%>
 
 	<%@include file="menu.jsp" %>
 				<!-- container width: 1200px -->
 	<div class="container">
 				
-		<h3> ±Û ÀÛ¼º </h3>
+		<h3> ê¸€ ì‘ì„± </h3>
 		<form name="boardform" method="post" action="boardwritecontroller.jsp" enctype="multipart/form-data" onsubmit="return boardcheck()">
 			<div style="margin-top: 30px;">
-				<label>Á¦¸ñ</label>
+				<label>ì œëª©</label>
 				<input type="text" class="form-control" name="title" maxlength="30">
 			</div>
 			
 			<div style="margin-top: 30px;">
-				<label>³»¿ë</label>
+				<label>ë‚´ìš©</label>
 				<textarea rows="5" cols="" style="resize: none;" class="form-control" name="contents"></textarea>
 			</div>
 			
 			<div style="margin-top: 30px;">
-				<label>Ã·ºÎÆÄÀÏ</label>
+				<label>ì²¨ë¶€íŒŒì¼</label>
 				<input type="file" class="form-comtrol" name="file">
 			</div>
 			<div>
-				<input type="submit" value="µî·Ï" class="form-control pull-right" style="width: 100px;">
+				<input type="submit" value="ë“±ë¡" class="form-control pull-right" style="width: 100px;">
 			</div>
 		</form>
 	</div>
 	
 		<!-- 
-			HTML : À¥¹®¼­ 
-			CSS : HTML ²Ù¹Ì±â [ ½ºÅ¸ÀÏ ½ÃÆ® ]
+			HTML : ì›¹ë¬¸ì„œ 
+			CSS : HTML ê¾¸ë¯¸ê¸° [ ìŠ¤íƒ€ì¼ ì‹œíŠ¸ ]
 			JS : 
 		 -->
 	
-	<script type="text/javascript"> <!-- js[javascript] À¯È¿¼º°Ë»ç  -->
+	<script type="text/javascript"> <!-- js[javascript] ìœ íš¨ì„±ê²€ì‚¬  -->
 		function boardcheck() {
-			// boardcheck ¸Ş¼Òµå Á¤ÀÇ		
+			// boardcheck ë©”ì†Œë“œ ì •ì˜		
 			if( boardform.title.value.length == 0 ){
-				alert("Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä"); // ¸Ş½ÃÁö Ã¢ ¶ç¿ì±â 
+				alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”"); // ë©”ì‹œì§€ ì°½ ë„ìš°ê¸° 
 				return false;  
 			}
 			if( boardform.contents.value.length == 0 ){
-				alert("³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä"); // ¸Ş½ÃÁö Ã¢ ¶ç¿ì±â 
+				alert("ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”"); // ë©”ì‹œì§€ ì°½ ë„ìš°ê¸° 
 				return false; 
 			}
 		}

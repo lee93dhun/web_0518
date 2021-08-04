@@ -3,12 +3,12 @@
 <%@page import="Dto.NoticeDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.NoticeDao"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
 </head>
@@ -18,34 +18,34 @@
 	
 	<div class="container">
 		 
-		 <h3> Ä¿¹Â´ÏÆ¼ </h3>
+		 <h3> ì»¤ë®¤ë‹ˆí‹° </h3>
 		
 		 <table class="table table-striped">
 		 	<thead>
 		 		<tr>
-		 			<th> ¹øÈ£ </th>
-		 			<th> ´ëÇ¥ ÀÌ¹ÌÁö </th>
-		 			<th> Á¦¸ñ </th>
-		 			<th> ÀÛ¼ºÀÚ </th>
-		 			<th> ÀÛ¼ºÀÏ </th>
-		 			<th> Á¶È¸¼ö </th>
+		 			<th> ë²ˆí˜¸ </th>
+		 			<th> ëŒ€í‘œ ì´ë¯¸ì§€ </th>
+		 			<th> ì œëª© </th>
+		 			<th> ìž‘ì„±ìž </th>
+		 			<th> ìž‘ì„±ì¼ </th>
+		 			<th> ì¡°íšŒìˆ˜ </th>
 		 		</tr>
 		 	</thead>
 		 	
 		 	<tbody>
 		 		<%
 		 		
-		 		request.setCharacterEncoding("EUC-KR");
+		 		request.setCharacterEncoding("UTF-8");
 		 		String key = request.getParameter("key");
 		 		String keyword = request.getParameter("keyword");
 		 		
 		 		NoticeDao noticeDao = NoticeDao.getinstance();
 		 		
 		 		ArrayList<NoticeDto> noticeDtos ;
-		 		// °Ë»öÀÌ ¾øÀ»°æ¿ì 
+		 		// ê²€ìƒ‰ì´ ì—†ì„ê²½ìš° 
 		 		if( key == null || keyword == null ){
 		 			noticeDtos = noticeDao.noticelist();
-		 		}else{ // °Ë»öÀÌ ÀÖ´Â°æ¿ì
+		 		}else{ // ê²€ìƒ‰ì´ ìžˆëŠ”ê²½ìš°
 		 
 		 			noticeDtos = noticeDao.noticekeyword( key , keyword );
 		 		}
@@ -54,7 +54,7 @@
 		 			<tr>
 		 				<td><%=noticeDto.getNno() %></td>
 		 				<td> <img alt="" src="../upload/<%=noticeDto.getNfile() %>"  width="25px;"> </td>
-		 				<td width="700px;"><a href="#"> <%=noticeDto.getNtitle() %></a></td>
+		 				<td width="700px;"><a href="boardview.jsp?nno=<%=noticeDto.getNno()%>"> <%=noticeDto.getNtitle() %></a></td>
 		 				<td><%=noticeDto.getNwriter() %></td>
 		 				<%
 		 					String dbdate = noticeDto.getNdate();
@@ -81,23 +81,23 @@
 		 	</tbody>
 		 </table>
 		 
-		 <a href="boardwrite.jsp" class="btn btn-info pull-right">±ÛÀÛ¼º</a>
+		 <a href="boardwrite.jsp" class="btn btn-info pull-right">ê¸€ìž‘ì„±</a>
 		 
 		 <form method="post" action="boardlist.jsp">
 		 	<table  style="margin: 0 auto;">
 		 		<tr>
 		 			<td>
 		 				<select name="key" class="form-control">
-		 					<option value="ntitle"> Á¦¸ñ </option>
-		 					<option value="ncontents"> ³»¿ë </option>
-		 					<option value="nwriter"> ÀÛ¼ºÀÚ </option>
+		 					<option value="ntitle"> ì œëª© </option>
+		 					<option value="ncontents"> ë‚´ìš© </option>
+		 					<option value="nwriter"> ìž‘ì„±ìž </option>
 		 				</select>
 		 			</td>
 		 			<td>
-		 				<input type="text" class="form-control" name="keyword" placeholder="°Ë»ö¾î" style="margin: 3px;">
+		 				<input type="text" class="form-control" name="keyword" placeholder="ê²€ìƒ‰ì–´" style="margin: 3px;">
 		 			</td>
 		 			<td>
-		 				<input type="submit" value="°Ë»ö" class="form-control" style="margin: 6px;">
+		 				<input type="submit" value="ê²€ìƒ‰" class="form-control" style="margin: 6px;">
 		 			</td>
 		 		</tr>
 		 	</table>
@@ -105,11 +105,11 @@
 		 
 		 <div align="center">
 		 	<ul class="pagination">
-		 		<li class="page-item"> <a href="#"> ÀÌÀü </a> </li>
+		 		<li class="page-item"> <a href="#"> ì´ì „ </a> </li>
 		 		<li class="page-item"> <a href="#">1 </a></li>
 		 		<li class="page-item"> <a href="#">2 </a></li>
 		 		<li class="page-item"> <a href="#">3 </a></li>
-		 		<li class="page-item"> <a href="#">´ÙÀ½ </a></li>
+		 		<li class="page-item"> <a href="#">ë‹¤ìŒ </a></li>
 		 	</ul>
 		 </div>
 	</div>

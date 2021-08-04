@@ -4,45 +4,45 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="Dao.NoticeDao"%>
 <%@page import="Dto.NoticeDto"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
 	<%
-		// JSP ÆÄÀÏ ¾÷·Îµå ÇÏ±â [ ÆÄÀÏ --> ¼­¹ö ]
-		// 1. COS ¶óÀÌºê·¯¸® Ãß°¡ 
+		// JSP íŒŒì¼ ì—…ë¡œë“œ í•˜ê¸° [ íŒŒì¼ --> ì„œë²„ ]
+		// 1. COS ë¼ì´ë¸ŒëŸ¬ë¦¬ ì¶”ê°€ 
 		
-		// 2.¾÷·Îµå µÈ ÆÄÀÏÀ» ÀúÀåÇÒ Æú´õ °æ·Î ¼³Á¤ 
+		// 2.ì—…ë¡œë“œ ëœ íŒŒì¼ì„ ì €ì¥í•  í´ë” ê²½ë¡œ ì„¤ì • 
 		String realFolder = "C:/Users/User/git/web_0518/FRONT/src/main/webapp/upload";
 	
-		// 3.ÆÄÀÏ ¿äÃ» Å¬·¡½º 
+		// 3.íŒŒì¼ ìš”ì²­ í´ë˜ìŠ¤ 
 		MultipartRequest multi = new MultipartRequest( request , realFolder , 1024*1024*10 , "UTF-8" ,new DefaultFileRenamePolicy() );
-																// 1. ¿äÃ»¹æ½Ä , 2.ÀúÀå°æ·Î , 3.ÆÄÀÏÃÖ´ë¿ë·®[ 10mb ] , 4.ÀÎÄÚµùÅ¸ÀÔ 5. º¸¾È[ µ¿ÀÏÇÑ ÀÌ¸§ÀÌ ÀÖÀ»°æ¿ì ÆÄÀÏ¸íµÚ¿¡ ¼ıÀÚ ºÙ¿©ÁÜ]
+																// 1. ìš”ì²­ë°©ì‹ , 2.ì €ì¥ê²½ë¡œ , 3.íŒŒì¼ìµœëŒ€ìš©ëŸ‰[ 10mb ] , 4.ì¸ì½”ë”©íƒ€ì… 5. ë³´ì•ˆ[ ë™ì¼í•œ ì´ë¦„ì´ ìˆì„ê²½ìš° íŒŒì¼ëª…ë’¤ì— ìˆ«ì ë¶™ì—¬ì¤Œ]
 																		// [ bit -> byte -> kb -> mb ]
-		// 4. form ÅÂ±× ¼Ó¼º enctype="multipart/form-data"
+		// 4. form íƒœê·¸ ì†ì„± enctype="multipart/form-data"
 		
 		String ntitle = multi.getParameter("title");
 		String ncontents = multi.getParameter("contents");
 		String nfile = multi.getFilesystemName("file"); 
-									// .getFilesystemName : Ã·ºÎÆÄÀÏ¿¡ ÀÖ´Â ÆÄÀÏ¸í ¿äÃ» 									
+									// .getFilesystemName : ì²¨ë¶€íŒŒì¼ì— ìˆëŠ” íŒŒì¼ëª… ìš”ì²­ 									
 	%>	
 
 	<%
-		// jsp ÅÂ±× : java ½ºÆ®Å©¸³Æ®¹® 
+		// jsp íƒœê·¸ : java ìŠ¤íŠ¸í¬ë¦½íŠ¸ë¬¸ 
 		
 
 		/* String ntitle = request.getParameter("title");
 		String ncontents = request.getParameter("contents");
 		String nfile = request.getParameter("file"); */
 		
-		// °´Ã¼ 
-		NoticeDto noticeDto = new NoticeDto(ntitle , ncontents , "À¯Àç¼®" , 0 , nfile );
+		// ê°ì²´ 
+		NoticeDto noticeDto = new NoticeDto(ntitle , ncontents , "ìœ ì¬ì„" , 0 , nfile );
 		
 		// DB 
 		NoticeDao noticeDao = NoticeDao.getinstance();
@@ -52,14 +52,14 @@
 		if( result == 1 ){
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
-			printWriter.println("alert('±Û ÀÛ¼º µî·Ï')");
+			printWriter.println("alert('ê¸€ ì‘ì„± ë“±ë¡')");
 			printWriter.println("location.href='boardlist.jsp'");
 			printWriter.println("</script>");
 		}
 		else{
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
-			printWriter.println("alert('±Û ÀÛ¼º ½ÇÆĞ[°ü¸®ÀÚ¿¡°Ô ¹®ÀÇ]')");
+			printWriter.println("alert('ê¸€ ì‘ì„± ì‹¤íŒ¨[ê´€ë¦¬ìì—ê²Œ ë¬¸ì˜]')");
 			printWriter.println("location.href='boardwrite.jsp'");
 			printWriter.println("</script>");
 		}
