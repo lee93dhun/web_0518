@@ -39,7 +39,7 @@
 					</tr>
 					<tr>
 						<td width="200px;"  style="vertical-align: middle;" > 게시물 내용 </td>
-						<td colspan="2" height="400px;" style="text-align: left;" > <%=noticeDto.getNcontents() %> </td>
+						<td colspan="2"  style="text-align: left;" > <%=noticeDto.getNcontents() %> </td>
 					</tr>
 					<tr>
 						<td colspan="2"> <img alt="" src="../upload/<%=noticeDto.getNfile() %>" width="100px;"> </td>
@@ -60,7 +60,7 @@
 					</tr>
 				</tbody>		
 			</table>
-			<a href="" class="btn btn-info pull-right">글수정</a>
+			<a href="boardupdate.jsp?nno=<%=nno %>" class="btn btn-info pull-right">글수정</a>
 			<a href="boarddeletecontroller.jsp?nno=<%=nno %>" class="btn btn-info pull-right" style="margin: 0 10px;">글삭제</a>
 			<a href="boardlist.jsp" class="btn btn-info pull-right">목록보기</a>
 			

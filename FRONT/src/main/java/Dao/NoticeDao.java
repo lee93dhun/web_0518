@@ -158,6 +158,26 @@ public class NoticeDao {
 		return 0;
 	}
 	
+	// 게시물 수정 메소드 
+	public int noticeupdate( int nno , NoticeDto noticeDto ) {
+		
+		String SQL = "update notice set ntitle=? , ncontents=? , nfile=? where nno =?";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setString(1, noticeDto.getNtitle());
+			preparedStatement.setString(2, noticeDto.getNcontents());
+			preparedStatement.setString(3, noticeDto.getNfile());
+			preparedStatement.setInt(4, nno );
+			
+			preparedStatement.executeUpdate();
+			return 1;
+		}catch (Exception e) {}
+		return 0;
+		
+	}
+	
+	
 	
 	
 	
