@@ -23,7 +23,7 @@
 	
 		<div class="container">
 		
-			<table class="table table-striped" style="text-align: center; border:solid gray 1px;">
+			<table class="table table-striped" style="text-align: center;">
 				<thead>
 					<tr>
 						<th colspan="3">게시물 조회수 :<%=noticeDto.getNcount() %>  
@@ -35,23 +35,35 @@
 				<tbody>
 					<tr>
 						<td width="200px;" style="vertical-align: middle;" > 게시물 제목 </td>
-						<td colspan="2"> <%=noticeDto.getNtitle() %> </td>
+						<td colspan="2" style="text-align: left;"> <%=noticeDto.getNtitle() %> </td>
 					</tr>
 					<tr>
 						<td width="200px;"  style="vertical-align: middle;" > 게시물 내용 </td>
-						<td colspan="2" height="400px;"> <%=noticeDto.getNcontents() %> </td>
+						<td colspan="2" height="400px;" style="text-align: left;" > <%=noticeDto.getNcontents() %> </td>
 					</tr>
 					<tr>
 						<td colspan="2"> <img alt="" src="../upload/<%=noticeDto.getNfile() %>" width="100px;"> </td>
 					</tr>
 					<tr>
 						<td width="200px;"> 첨부파일 다운로드 </td>
-						<td colspan="2" > <a href="filecontroller.jsp?file=<%=noticeDto.getNfile() %>"><%=noticeDto.getNfile() %> </a>  </td>
+						<% if( noticeDto.getNfile() == null  ) {
+						%>
+							<td colspan="2" > </td>
+						<% 	
+						}else{
+						%>
+							<td colspan="2" > <a href="filecontroller.jsp?file=<%=noticeDto.getNfile() %>"><%=noticeDto.getNfile() %> </a>  </td>
+						<% 
+						}
+						%>
+						
 					</tr>
 				</tbody>		
 			</table>
+			<a href="" class="btn btn-info pull-right">글수정</a>
+			<a href="boarddeletecontroller.jsp?nno=<%=nno %>" class="btn btn-info pull-right" style="margin: 0 10px;">글삭제</a>
+			<a href="boardlist.jsp" class="btn btn-info pull-right">목록보기</a>
 			
-		
 		</div>
 	
 
