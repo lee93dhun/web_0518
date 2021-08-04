@@ -113,6 +113,34 @@ public class NoticeDao {
 		return null;
 	}
 	
+	// 게시물 개별 조회 
+	public NoticeDto getnotice( int nno ) {
+		String SQL = "select * from notice where nno = ?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, nno);
+			
+		 	resultSet = preparedStatement.executeQuery();
+			
+		 	if( resultSet.next() ) {
+		 		
+		 		NoticeDto noticeDto = new NoticeDto(
+		 				resultSet.getInt(1), 
+		 				resultSet.getString(2), 
+		 				resultSet.getString(3),
+		 				resultSet.getString(4), 
+		 				resultSet.getString(5),
+		 				resultSet.getInt(6),
+		 				resultSet.getString(7));
+		 		return noticeDto;
+		 	}
+		 	
+		}catch (Exception e) {
+		}
+		return null;
+		
+	}
+	
 	
 	
 	
