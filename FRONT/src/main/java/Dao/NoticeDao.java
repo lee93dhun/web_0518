@@ -141,6 +141,23 @@ public class NoticeDao {
 		
 	}
 	
+	// 게시물 삭제 메소드 
+	public int noticedel( int nno) {
+		
+		String SQL = "delete from notice where nno =?";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, nno);
+			preparedStatement.executeUpdate();
+			
+			return 1;
+
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+	}
+	
 	
 	
 	
