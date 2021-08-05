@@ -42,16 +42,15 @@
 	<nav>
 		<div class="container">
 		
-			<div class="navbar-header">
-				
-				<a href="#"> <img alt="" src="/FRONT/Index/logo.png" width="100px;"> </a> asd
+			<div class="navbar-header" >
+				<a href="#" > <img alt="" src="/FRONT/img/logo.png" width="100px;"> </a>
 			</div>	
 		
-			<ul class="nav navbar-nav navbar-right">
-				<li style="margin: 0 1px; font-size: 8px;"> <a href="#"> 로그인 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px;"> <a href="#"> 회원가입 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px;"> <a href="#"> 로그아웃 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px;"> <a href="#"> 회원정보 </a> </li>
+			<ul class="nav navbar-nav navbar-right" style="margin-top: 50px;">
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그인 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원가입 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그아웃 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
 			</ul>
 		</div>
 	</nav>
