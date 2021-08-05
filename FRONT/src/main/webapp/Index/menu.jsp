@@ -45,7 +45,7 @@
 	<nav class="navbar navbar-default">
 		<div>
 			<ul>
-				<li> <a href="boardlist.jsp"> 커뮤니티 </a> </li>
+				<li> <a href="../Board/boardlist.jsp"> 커뮤니티 </a> </li>
 			</ul>
 		</div>
 	</nav>
