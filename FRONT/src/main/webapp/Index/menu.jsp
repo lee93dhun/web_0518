@@ -9,7 +9,6 @@
 	<!-- 부트스트랩 CDN :  -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	
 	<!-- 웹페이지 전체 폰트 : 눈누 -->
 	<style type="text/css">
@@ -39,17 +38,58 @@
 	
 </head>
 <body>
-	<div align="center">
-		<img alt="" src="logo.png" width="100px;">
-	</div>
-	<nav class="navbar navbar-default">
-		<div>
-			<ul>
-				<li> <a href="../Board/boardlist.jsp"> 커뮤니티 </a> </li>
+
+	<nav>
+		<div class="container">
+		
+			<div class="navbar-header" >
+				<a href="#" > <img alt="" src="/FRONT/img/logo.png" width="100px;"> </a>
+			</div>	
+		
+			<ul class="nav navbar-nav navbar-right" style="margin-top: 50px;">
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그인 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원가입 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그아웃 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
 			</ul>
 		</div>
 	</nav>
-
+	
+	<nav class="navbar navbar-default" style="background-color: white !important; margin-bottom: 30px;">
+		<div class="container">
+		
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only"> toggle</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li> <a href="#"> BEST </a> </li>
+					<li> <a href="#"> TOP </a> </li>
+					<li> <a href="#"> BOTTOM </a> </li>
+					<li> <a href="#"> OUTER </a> </li>
+					<li> <a href="#"> ACC </a> </li>
+					<li> <a href="#"> BRANDS </a> </li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li style="font-size: 10px;" > <a href="#"> CART </a> </li>
+					<li style="font-size: 10px;" > <a href="#"> REVIEW </a> </li>
+					<li style="font-size: 10px;"> <a href="#"> ABOUT </a> </li>
+					<li style="font-size: 10px;"> <a href="#"> Q/A </a> </li>
+					<li style="font-size: 10px;"> <a href="../Board/boardlist.jsp"> COMMUNITY </a> </li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!--  부트스트랩 js -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 
