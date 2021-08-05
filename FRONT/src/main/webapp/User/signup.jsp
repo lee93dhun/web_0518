@@ -15,9 +15,11 @@
 			<div class="col-lg-4">
 				<!-- 여백 -->
 			</div>
-			<div class="col-lg-5">
+			<div class="col-lg-4">
+				<div align="center">
+					<img alt="" src="../img/logo.png" width="100px;" style="margin: 30px;">
+				</div>
 				<form>
-				
 					<div class="col-lg-8">
 						<label>User ID*</label>
 						<input type="text" class="form-control" maxlength="30" name="id">
@@ -63,7 +65,7 @@
 							<input type="text" id="sample4_postcode" placeholder="우편번호" name="address1" class="form-control" >
 					</div>
 					<div class="col-lg-4">
-						<input type="button" style="margin-top: 23px;" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control" >
+						<input type="button" style="margin-top: 23px;" onclick="sample4_execDaumPostcode()" value="주소 검색" class="form-control" >
 					</div>
 					<div class="col-lg-6">
 						<input type="text" id="sample4_roadAddress" placeholder="도로명주소" name="address2" class="form-control">
