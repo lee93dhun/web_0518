@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<%@include file="menu.jsp" %>
+	<%@include file="../Index/menu.jsp" %>
 	
 	<div class="container">
 		 

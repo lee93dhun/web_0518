@@ -19,7 +19,7 @@
 		NoticeDto noticeDto =  noticeDao.getnotice(nno);
 	%>
 
-	<%@include file="menu.jsp" %>
+	<%@include file="../Index/menu.jsp"%>
 	
 		<div class="container">
 		
