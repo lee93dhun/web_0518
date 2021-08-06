@@ -15,6 +15,18 @@
 <body>
 
 	<%
+		// 비로그인 페이지 호출 불가 
+		String loginid = (String)session.getAttribute("loginid");
+		if(loginid == null ){
+			PrintWriter printWriter = response.getWriter();
+			printWriter.println("<script>");
+			printWriter.println("alert('로그인후 작성 가능합니다')");
+			printWriter.println("location.href='../User/login.jsp'");
+			printWriter.println("</script>");
+		}
+	%>
+
+	<%
 		// JSP 파일 업로드 하기 [ 파일 --> 서버 ]
 		// 1. COS 라이브러리 추가 
 		
@@ -40,13 +52,12 @@
 	<%
 		// jsp 태그 : java 스트크립트문 
 		
-
 		/* String ntitle = request.getParameter("title");
 		String ncontents = request.getParameter("contents");
 		String nfile = request.getParameter("file"); */
 		
 		// 객체 
-		NoticeDto noticeDto = new NoticeDto(ntitle , ncontents , "유재석" , 0 , nfile );
+		NoticeDto noticeDto = new NoticeDto(ntitle , ncontents , loginid , 0 , nfile );
 		
 		// DB 
 		NoticeDao noticeDao = NoticeDao.getinstance();

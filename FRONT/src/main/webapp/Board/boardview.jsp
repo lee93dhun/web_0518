@@ -60,8 +60,15 @@
 					</tr>
 				</tbody>		
 			</table>
+			<%
+			if( loginid !=null && loginid.equals( noticeDto.getNwriter() ) ){
+				// 로그인 되어 있고 로그인된 아이디가 글작성와 동일하면 
+			%>
 			<a href="boardupdate.jsp?nno=<%=nno %>" class="btn btn-info pull-right">글수정</a>
 			<a href="boarddeletecontroller.jsp?nno=<%=nno %>" class="btn btn-info pull-right" style="margin: 0 10px;">글삭제</a>
+			<%	
+			}
+			%>	
 			<a href="boardlist.jsp" class="btn btn-info pull-right">목록보기</a>
 			
 		</div>
