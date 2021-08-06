@@ -19,7 +19,7 @@
 				<div align="center">
 					<img alt="" src="../img/logo.png" width="100px;" style="margin: 30px;">
 				</div>
-				<form>
+				<form name="signupform" method="post" action="signupcontroller.jsp" onsubmit="return signupcheck()">
 					<div class="col-lg-8">
 						<label>User ID*</label>
 						<input type="text" class="form-control" maxlength="30" name="id">

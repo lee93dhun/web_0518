@@ -8,6 +8,53 @@
 </head>
 <body>
 
+
+<!-- 회원가입 유효성검사 -->
+
+<script type="text/javascript">
+
+	function signupcheck() {
+		// 메소드 정의
+		if( !signupform.id.value ){ // id의 값이 null 이면
+			alert("아이디 입력해주세요");
+			return false;
+		}
+		// id는 영문/숫자만 사용가능 
+		// 정규표현식
+			// ^ : 문자 시작 지점
+				// $ : 문자 종료 지점 
+				// [ ] : 허용범위
+		var regx = /^[a-zA-Z0-9]*$/;
+			// var : js 변수 선언 자료형 
+				
+		if( !regx.test( signupform.id.value) ){
+			// 정규표현식이 포함되어 있지 않으면 
+			alert("아이디는 영문 혹은 숫자만 가능 합니다 ");
+			return false;
+		}
+		
+		if( !signupform.password.value){
+			alert("패스워드 입력해주세요");
+			return false;
+		}
+		
+		if( signupform.password.value != signupform.passwordcheck.value ){
+			alert("패스워드가 동일하지 않습니다");
+			return false;
+		}
+		
+		if( !signupform.name.value){
+			alert("이름 입력해주세요");
+			return false;
+		}
+		
+	}
+
+</script>
+
+
+
+<!-- 다음 주소 api  js -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.

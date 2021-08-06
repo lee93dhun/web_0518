@@ -16,5 +16,5 @@ create table jspweb.user(
     uname varchar(30) not null ,
     uaddress varchar(1000) not null ,
     uemail varchar(100) not null ,
-    upoint varchar(30) not null  
+    upoint int(30) not null  
 )
