@@ -19,33 +19,35 @@
 		// 2. request 매개변수 
 		String uid  = request.getParameter("id");
 		String upassowrd = request.getParameter("password");
-		String uname = request.getParameter("name");
-		String address1 = request.getParameter("address1");
-		String address2 = request.getParameter("address2");
-		String address3 = request.getParameter("address3");
-		String address4 = request.getParameter("address4");
-		String uaddress = address1+"/"+address2+"/"+address3+"/"+address4;
-		String uemail = request.getParameter("email");
 	
 		// 3. 객체 만들기 
-		UserDto userDto = new UserDto( uid , upassowrd , uname , uaddress , uemail , 100 );
 		
 		// 4. dao 객체 저장 
 		UserDao userDao = UserDao.getinstance();
-		int result = userDao.usersignup(userDto);
+		int result = userDao.userlogin( uid , upassowrd );
 		
 		// 5. dao 결과 제어
 		if( result == 1 ){
+			
+			// 세션 부여 : 서버에 메모리 저장 [ 모든 페이지내에서 사용 가능 메모리 ]
+			session.setAttribute("loginid", uid);
+								// 세션이름 , 세션담을 데이터 
+			
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
-			printWriter.println("alert('회원 가입 등록')");
+			printWriter.println("location.href='../Index/main.jsp'");
+			printWriter.println("</script>");
+		}else if( result == 2){
+			PrintWriter printWriter = response.getWriter();
+			printWriter.println("<script>");
+			printWriter.println("alert('로그인실패 [ 아이디 혹은 비밀번호가 다릅니다 ]')");
 			printWriter.println("location.href='login.jsp'");
 			printWriter.println("</script>");
 		}else{
 			PrintWriter printWriter = response.getWriter();
 			printWriter.println("<script>");
-			printWriter.println("alert('회원 가입 실패 [ 관리자에게 문의 ]')");
-			printWriter.println("location.href='signup.jsp'");
+			printWriter.println("alert('로그인실패 [ 오류발생 관리자에게 문의바랍니다 ]')");
+			printWriter.println("location.href='login.jsp'");
 			printWriter.println("</script>");
 		}
 

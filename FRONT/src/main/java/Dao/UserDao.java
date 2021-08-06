@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 import Dto.UserDto;
 
 public class UserDao {
@@ -50,6 +51,25 @@ public class UserDao {
 	}
 	
 	// 로그인 메소드 
+	public int userlogin( String uid , String upassword ) {
+		
+		
+		String SQL = "select * from user where uid =? and upassword = ? ";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setString(1, uid);
+			preparedStatement.setString(2, upassword);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			if( resultSet.next() ) {
+				return 1; // 동일한 회원o
+			}
+			return 2; // 동일한 회원x 
+		}catch(Exception e) {}
+		return 0; // db 오류 
+	}
 
 	// 모든 회원 조회 
 	
