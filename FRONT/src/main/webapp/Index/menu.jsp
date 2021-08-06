@@ -46,10 +46,22 @@
 	<nav>
 		<div class="container">
 			<ul class="nav navbar-nav navbar-right">
-				<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/login.jsp"> 로그인 </a> </li>
+				<%
+					// 1.세션 가져오기
+					String loginid = (String)session.getAttribute("loginid");
+				 	if( loginid != null ){
+				 %>
+					<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/logout.jsp"> 로그아웃 </a> </li>
+					<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
+				<% 	
+				 	}else{
+				 %>
+				 <li style="margin: 0 1px; font-size: 8px; "> <a href="../User/login.jsp"> 로그인 </a> </li>
 				<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/signup.jsp"> 회원가입 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그아웃 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
+				 <%	
+				 	}
+				%>
+				
 			</ul>
 		</div>
 	</nav>
