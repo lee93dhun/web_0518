@@ -39,23 +39,22 @@
 </head>
 <body>
 
+	<div align="center">
+		<a href="#" > <img alt="" src="/FRONT/img/logo.png" width="130px;"> </a>
+	</div>
+	
 	<nav>
 		<div class="container">
-		
-			<div class="navbar-header" >
-				<a href="#" > <img alt="" src="/FRONT/img/logo.png" width="100px;"> </a>
-			</div>	
-		
-			<ul class="nav navbar-nav navbar-right" style="margin-top: 50px;">
-				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그인 </a> </li>
-				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원가입 </a> </li>
+			<ul class="nav navbar-nav navbar-right">
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/login.jsp"> 로그인 </a> </li>
+				<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/signup.jsp"> 회원가입 </a> </li>
 				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 로그아웃 </a> </li>
 				<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
 			</ul>
 		</div>
 	</nav>
 	
-	<nav class="navbar navbar-default" style="background-color: white !important; margin-bottom: 30px;">
+	<nav class="navbar navbar-inverse" style="background-color: white !important; margin-bottom: 30px;">
 		<div class="container">
 		
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -66,8 +65,8 @@
 			</button>
 		
 			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li> <a href="#"> BEST </a> </li>
+				<ul class="nav navbar-nav" >
+					<li > <a href="#" > BEST </a> </li>
 					<li> <a href="#"> TOP </a> </li>
 					<li> <a href="#"> BOTTOM </a> </li>
 					<li> <a href="#"> OUTER </a> </li>
