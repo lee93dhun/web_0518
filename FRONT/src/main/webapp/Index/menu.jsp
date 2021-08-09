@@ -52,7 +52,7 @@
 				 	if( loginid != null ){
 				 %>
 					<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/logout.jsp"> 로그아웃 </a> </li>
-					<li style="margin: 0 1px; font-size: 8px; "> <a href="#"> 회원정보 </a> </li>
+					<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/userinfo.jsp"> 회원정보 </a> </li>
 				<% 	
 				 	}else{
 				 %>
