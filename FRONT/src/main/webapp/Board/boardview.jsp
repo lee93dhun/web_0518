@@ -72,8 +72,38 @@
 			<a href="boardlist.jsp" class="btn btn-info pull-right">목록보기</a>
 			
 		</div>
-	
-
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<!-- ---------------------------- 댓글 작성 -------------------------- -->	
+		<div class="container"> 
+			* 로그인후 댓글 작성 가능 합니다 
+			<form method="post" action="bcommentcontroller.jsp">
+				<input type="hidden" value="<%=nno%>" name="nno">
+				<table>
+					<tr>
+						<td><textarea rows="3" cols="100" style="resize: none" name="contents"></textarea> </td>
+						<td><input type="submit" value="입력" style="padding: 20px;"></td>
+					</tr>
+				</table>
+			</form>
+			
+			<!-- ---------------------------- 댓글 출력 -------------------------- -->	
+				<table>
+					<tr>
+						<td> 작성자  </td>
+						<td> 작성일 </td>
+						<td> 내용 </td>
+						<td>삭제버튼</td>
+					</tr>
+				</table>
+			
+			
+			
+		</div>
+		
 
 
 
@@ -82,3 +112,6 @@
 
 </body>
 </html>
+
+
+
