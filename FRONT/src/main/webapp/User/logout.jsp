@@ -11,10 +11,11 @@
 	<%
 		// session.invalidate(); // 모든 세션 초기화 
 		session.setAttribute("loginid", null ); // loginid만 null로 초기화 
-		
 		// 페이지이동
 		response.sendRedirect("login.jsp");
+		
 	%>
+	
 
 </body>
 </html>

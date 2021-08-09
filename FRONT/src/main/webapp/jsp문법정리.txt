@@ -38,6 +38,23 @@ jsp : html 내 태그 이용한 java 작성
 			* 개인정보가 있는 데이터
 				1. 세션설정 : session.setAttribute("세션이름" , 데이터 ) 
 				2. 세션호출 : session.getAttribute("세션이름") 
+				3. 세션초기화 : session.invalidate()
+	
+	4. 링크[ 페이지 이동 ]  
+		html : <a href=url >
+		js : location.href=url
+		jsp : response.sendRedirect( url ) 
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				
