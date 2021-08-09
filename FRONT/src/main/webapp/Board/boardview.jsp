@@ -1,3 +1,6 @@
+<%@page import="Dto.BcommentDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Dao.BcommentDao"%>
 <%@page import="Dto.NoticeDto"%>
 <%@page import="Dao.NoticeDao"%>
 <%@page import="Dao.BoardDao"%>
@@ -82,22 +85,51 @@
 			* 로그인후 댓글 작성 가능 합니다 
 			<form method="post" action="bcommentcontroller.jsp">
 				<input type="hidden" value="<%=nno%>" name="nno">
-				<table>
+				<table class="table">
 					<tr>
-						<td><textarea rows="3" cols="100" style="resize: none" name="contents"></textarea> </td>
-						<td><input type="submit" value="입력" style="padding: 20px;"></td>
+						<td><textarea rows="3" cols="130" style="resize: none" name="contents"></textarea> </td>
+						<td style="padding: 10px"><input type="submit" value="입력" style="padding: 20px;"></td>
 					</tr>
 				</table>
 			</form>
 			
 			<!-- ---------------------------- 댓글 출력 -------------------------- -->	
 				<table>
+				<%
+					BcommentDao bcommentDao = BcommentDao.getinstance();
+					ArrayList<BcommentDto> bcommentDtos = bcommentDao.bcommentlist(nno);
+					
+					for( BcommentDto bcommentDto : bcommentDtos ){
+					%>	
 					<tr>
-						<td> 작성자  </td>
-						<td> 작성일 </td>
-						<td> 내용 </td>
-						<td>삭제버튼</td>
+						<td style="padding: 10px;"> 
+							<%=bcommentDto.getBcwriter() %>  
+						</td>
+
+						<td> 
+							<%=bcommentDto.getBcdate() %>
+						</td>
+						
 					</tr>
+					
+					<tr>
+						<td style="padding: 5px;"> 
+							<%=bcommentDto.getBccontents() %>
+						</td>
+					</tr>
+					
+					<tr>
+						<td> 
+							<a href="bcdeletecontroller.jsp?bcno=<%=bcommentDto.getBcno()%>&nno=<%=nno%>">삭제</a> 
+							<a href="#">수정</a> 
+						</td>
+					</tr>
+	
+				<%
+					}
+					
+				%>
+				
 				</table>
 			
 			

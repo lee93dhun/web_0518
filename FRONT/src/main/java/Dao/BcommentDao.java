@@ -48,7 +48,62 @@ public class BcommentDao {
 		catch (Exception e) {}
 		return 0;
 	}
-	// 댓글 출력 
+	// 해당 게시물의 모든 댓글 출력 
+	public ArrayList<BcommentDto> bcommentlist( int nno){
+		
+		String Sql = "select * from bcomment where nno = ?";
+		
+		ArrayList<BcommentDto> bcommentDtos = new ArrayList<BcommentDto>();
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(Sql);
+			
+			preparedStatement.setInt(1, nno);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			 while( resultSet.next() ) {
+				 	
+				 BcommentDto bcommentDto = new BcommentDto(
+						 	resultSet.getInt(1),
+							resultSet.getInt(2),
+							resultSet.getString(3),
+							resultSet.getString(4),
+							resultSet.getString(5) );
+				 bcommentDtos.add(bcommentDto);
+			 }
+			 return bcommentDtos;
+	
+		}catch (Exception e) {}
+		return null;
+	}
+	
+	// 댓글 삭제 [ 인수 : 댓글번호 / 반환 : x ] 
+	public int bcommentdelete( int bcno ) {
+		
+		String sql = "delete from bcomment where bcno = ?";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, bcno);
+			preparedStatement.executeUpdate();
+			
+			return 1; 
+		}catch (Exception e) {}
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	// 댓글 삭제 
 	
