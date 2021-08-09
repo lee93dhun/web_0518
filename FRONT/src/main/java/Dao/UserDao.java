@@ -73,11 +73,71 @@ public class UserDao {
 
 	// 모든 회원 조회 
 	
-	// 개별 회원 조회 
+	// 개별 회원 조회 [ 인수 : 아이디 / 반환 : 아이디의 모든 정보 출력[ 비밀번호 제외 ] 
+	public UserDto getuser( String uid) {
+		
+		String SQL ="SELECT * from user where uid=?";
+		try {
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setString(1, uid);
+			
+			resultSet =  preparedStatement.executeQuery();
+			
+			if( resultSet.next() ) {
+				UserDto userDto = new UserDto(
+						resultSet.getInt(1), 
+						resultSet.getString(2),
+						null,
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getInt(7) );
+				return userDto;
+				
+			}
+			
+		}catch (Exception e) {}
+		return null;
+	}
 	
 	// 회원수정 메소드 
 	
 	// 회워탈퇴 메소드 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
