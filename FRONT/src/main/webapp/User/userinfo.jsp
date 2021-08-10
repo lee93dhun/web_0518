@@ -123,6 +123,8 @@
 					%>
 						<form method="post" action="userupdatecontroller.jsp">
 							<input type="hidden" name="nno" value="<%=userDto.getUno()%>">
+							<input type="hidden" name="oldaddress" value="<%=userDto.getUaddress() %>">
+							<input type="hidden" name="oldpassword" value="<%=userDto.getUpassword()%>">
 							<table>
 							<tr>
 								<td> 아이디 : <%=loginid %> </td>
@@ -136,6 +138,7 @@
 							</tr>
 							<tr>
 								<td> 주소 : <%=userDto.getUaddress() %> </td>
+								
 								<td> 새로운주소 :
 									<div>
 									<input type="text" id="sample4_postcode" placeholder="우편번호" name="address1" class="form-control" >

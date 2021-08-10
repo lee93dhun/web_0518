@@ -16,12 +16,18 @@
 		request.setCharacterEncoding("UTF-8");
 		// 2. 
 		String upassword = request.getParameter("password");
+			if( upassword.equals("") ){ // 새로운 비밀번호가 입력 안했으면
+				upassword = request.getParameter("oldpassword");
+			}
 		String uname = request.getParameter("name");
 		String address1 = request.getParameter("address1");
 		String address2 = request.getParameter("address2");
 		String address3 = request.getParameter("address3");
 		String address4 = request.getParameter("address4");
 		String uaddress = address1+"/"+address2+"/"+address3+"/"+address4;
+			if( address1.equals("") && address2.equals("") & address3.equals("") ){ // 새로운 주소 입력 안했으면
+				uaddress = request.getParameter("oldaddress");
+			}
 		String uemail = request.getParameter("email");
 		int nno = Integer.parseInt( request.getParameter("nno") ) ;
 		
