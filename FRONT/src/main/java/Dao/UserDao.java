@@ -88,7 +88,7 @@ public class UserDao {
 				UserDto userDto = new UserDto(
 						resultSet.getInt(1), 
 						resultSet.getString(2),
-						null,
+						resultSet.getString(3),
 						resultSet.getString(4),
 						resultSet.getString(5),
 						resultSet.getString(6),

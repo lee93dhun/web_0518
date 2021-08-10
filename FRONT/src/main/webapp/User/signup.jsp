@@ -61,8 +61,8 @@
 					</div>
 			
 					<div class="col-lg-8">
-							<label> Address </label>
-							<input type="text" id="sample4_postcode" placeholder="우편번호" name="address1" class="form-control" >
+					<label> Address </label>
+					<input type="text" id="sample4_postcode" placeholder="우편번호" name="address1" class="form-control" >
 					</div>
 					<div class="col-lg-4">
 						<input type="button" style="margin-top: 23px;" onclick="sample4_execDaumPostcode()" value="주소 검색" class="form-control" >

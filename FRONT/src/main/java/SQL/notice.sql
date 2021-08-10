@@ -1,3 +1,5 @@
+
+create database jspweb
 create table jspweb.notice(
 
 	nno int primary key auto_increment,
