@@ -90,7 +90,7 @@
 			<%
 				if( confirm != null ){
 			%>
-				<div class="tab-pane fade active" id="infoupdate">
+				<div class="tab-pane fade active in" id="infoupdate">
 			<% 
 				}else{
 			%>
