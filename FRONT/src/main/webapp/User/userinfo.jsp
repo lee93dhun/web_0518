@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="Dto.UserDto"%>
 <%@page import="Dao.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,11 +17,21 @@
 	<!-- 현패 파일이 포함시키는 파일과 폴더가 다른경우 -->
 	<%@include file="../Index/menu.jsp" %>
 	
-	<%
-		UserDao userDao = UserDao.getinstance();
-		UserDto userDto = userDao.getuser(loginid);
-		
-		String confirm = request.getParameter("confirm");
+	<!-- 로그인이 안했을경우 로그인 페이지  -->
+	<% 
+	// 비로그인 페이지 호출 불가 
+	if(loginid == null ){
+		PrintWriter printWriter = response.getWriter();
+		printWriter.println("<script>");
+		printWriter.println("alert('로그인후 접근 가능 페이지 입니다 ')");
+		printWriter.println("location.href='../User/login.jsp'");
+		printWriter.println("</script>");
+	}
+	
+	UserDao userDao = UserDao.getinstance();
+	UserDto userDto = userDao.getuser(loginid); // 로그인된 회원정보
+	String confirm = request.getParameter("confirm"); // 비밀번호 체크 변수 
+	
 	%>
 
 	<div class="container">
@@ -111,6 +122,7 @@
 						}else if( confirm.equals("1")){
 					%>
 						<form method="post" action="userupdatecontroller.jsp">
+							<input type="hidden" name="nno" value="<%=userDto.getUno()%>">
 							<table>
 							<tr>
 								<td> 아이디 : <%=loginid %> </td>
@@ -147,6 +159,7 @@
 								<td> 이메일 : <input type="email" value=" <%=userDto.getUemail() %>" name="email"> </td>
 							</tr>
 						</table>
+							<input type="submit" value="수정">
 						</form>
 					<%	
 						}else if( confirm.equals("0")){
