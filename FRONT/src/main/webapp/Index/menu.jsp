@@ -50,6 +50,11 @@
 					// 1.세션 가져오기
 					String loginid = (String)session.getAttribute("loginid");
 				 	if( loginid != null ){
+				 		if( loginid.equals("admin") ){
+				 %>
+				 			<li style="margin: 0 1px; font-size: 8px; "> <a href="../admin/admininfo.jsp"> 관리자 </a> </li>
+				 <%
+				 		}
 				 %>
 					<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/logout.jsp"> 로그아웃 </a> </li>
 					<li style="margin: 0 1px; font-size: 8px; "> <a href="../User/userinfo.jsp"> 회원정보 </a> </li>
