@@ -38,12 +38,32 @@
 		}
 		ul .main_li img{  
 			width: 200px; /* 부트스트랩 컨테이너 전체크기 => 1200px; */
+			border-radius: 5%; /* 모서리 곡선*/
+			border-bottom : 1px solid orange;
+			margin-bottom: 20px;
 		}
-		
-		
-		
-		
-		
+		ul .main_li img:hover {
+			/* 이미지에 마우스를 올렸을때 */
+			transform: scale( 1.1 ) /*확대 1.1배*/
+		}
+		.goods_info{
+			width: 200px;
+		}
+		.category{
+			line-height: 1.5em;
+			color: gray;
+		}
+		.productname{
+			line-height: 1.5em;
+			font-size: 18px;
+			display: block;
+		}
+		.price{
+			line-height: 1.5em;
+			text-align: right;
+			color: black;
+			display: block;
+		}
 		
 		
 	</style>
@@ -101,14 +121,27 @@
 					<li class="main_li">
 						<a href="#"> <img alt="" src="../img/몬스터2버거.png"> </a> 
 						<div class="goods_info">
-							<span class=""> </span>
-							<span class=""> </span>
-							<span class=""> </span>
+							<span class="category">분류명</span>
+							<span class="productname">제품명</span>
+							<span class="price">20,000</span>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>	
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
 		
 		
 		
