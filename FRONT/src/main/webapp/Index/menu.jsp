@@ -39,8 +39,8 @@
 </head>
 <body>
 
-	<div align="center">
-		<a href="#" > <img alt="" src="/FRONT/img/logo.png" width="130px;"> </a>
+	<div align="center"> <!-- URL : IP주소:HTTP포트/프로젝트명/폴더명/파일명 -->
+		<a href="/FRONT/Index/main.jsp" > <img alt="" src="/FRONT/img/logo.png" width="130px;"> </a>
 	</div>
 	
 	<nav>

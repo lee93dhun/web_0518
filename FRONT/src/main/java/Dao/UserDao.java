@@ -117,9 +117,20 @@ public class UserDao {
 		
 	}
 	
-	
-	
 	// 회워탈퇴 메소드 
+	public int userdelete( int uno , String password ) {
+		
+		String SQL ="delete from user where uno=? and upassword = ?";
+					// 로그인된 회원번호와 비밀번호가 동일한경우 
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			preparedStatement.setInt(1, uno);
+			preparedStatement.setString(2, password);
+			preparedStatement.executeUpdate();
+			return 1;
+		}catch (Exception e) {}
+		return 0;
+	}
 	
 	
 	

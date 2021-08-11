@@ -69,6 +69,17 @@
 		</ul>
 		
 		<div class="tab-content">
+		
+			<div class="tab-pane fade" id="infodelete">
+				<div>회원탈퇴</div>
+				정말 탈퇴하시겠습니까?
+				<form method="post" action="userdeletecontroller.jsp">
+					<input type="hidden" value="<%=userDto.getUno()%>" name="uno">
+					<input type="password" name="passowrd"> 
+					<input type="submit" value="확인">
+				</form>
+			</div>
+		
 			<div class="tab-pane fade" id="order">
 				<div>주문목록</div>
 			</div>
@@ -117,6 +128,7 @@
 						<form method="post" action="userconfirm.jsp">
 							비밀번호 : <input type="password" name="password">
 							<input type="submit" value="확인">
+		
 						</form>
 					<%
 						}else if( confirm.equals("1")){
@@ -178,9 +190,6 @@
 					%>
 					
 				</div>
-			</div>
-			<div class="tab-pane fade" id="infodelete">
-				<div>회원탈퇴</div>
 			</div>
 		</div>
 	</div>
