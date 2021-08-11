@@ -19,7 +19,7 @@
 			
 			<ul class="list-group">
 				<li class="list-group-item"> <a href="#">제품목록</a></li>
-				<li class="list-group-item"> <a href="#">제품등록</a></li>
+				<li class="list-group-item"> <a href="productwrite.jsp">제품등록</a></li>
 				<li class="list-group-item"> <a href="#">제품관리</a></li>
 				<li class="list-group-item"> <a href="#">제품리뷰</a></li>
 			</ul>
