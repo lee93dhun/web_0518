@@ -7,12 +7,46 @@
 <title>Insert title here</title>
 
 
-		<style type="text/css">
-			
-				.carousel-control{
-					background: none !important; /* 효과가 겹쳐있을경우 최우선 */
-				}
-			</style>
+	<style type="text/css">
+		
+		.carousel-control{
+			background: none !important; /* 효과가 겹쳐있을경우 최우선 */
+		}
+		
+		/* 상품 목록 제목 */
+		.goodslist_tit{
+			margin-top: 100px;
+			margin-bottom: 60px;
+			text-align: center;
+		}
+		.goodslist_detail{
+			color: gray;
+			margin-top: 15px;
+			padding-bottom: 30px; 
+			border-bottom: 4px solid orange;
+		}
+		
+		/* 상품 목록 */
+		ul{
+			margin-top: 20px 0px;
+		}
+		ul .main_li{
+			margin-right: 15px;
+			list-style-type: none;
+			float: left;
+			margin-top: 30px;
+		}
+		ul .main_li img{  
+			width: 200px; /* 부트스트랩 컨테이너 전체크기 => 1200px; */
+		}
+		
+		
+		
+		
+		
+		
+		
+	</style>
 </head>
 <body>
 
@@ -50,8 +84,59 @@
 				<a class="right carousel-control" href="#myCarousel" data-slide="next">
 					<span class="glyphicon glyphicon-chevron-right"></span>
 				</a>
-				
 		</div>
+<!----------------------------  캐러셀 END ----------------------->	
+	
+		<div class="container">
+			
+			<div class="goodslist" id="goodslist_best">
+				
+				<div class="goodslist_tit">
+					<h3> 베스트 상품 </h3>
+					<span class="goodslist_detail"> 다양한 BEST 주문 상품들을 만나보세요. </span>
+				</div>
+			
+				<ul>
+					<!-- 반복문 -->
+					<li class="main_li">
+						<a href="#"> <img alt="" src="../img/몬스터2버거.png"> </a> 
+						<div class="goods_info">
+							<span class=""> </span>
+							<span class=""> </span>
+							<span class=""> </span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	<%@include file="../Index/footer.jsp" %>
 
