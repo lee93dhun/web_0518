@@ -26,7 +26,7 @@
 				
 				<h3> 제품등록</h3>
 							
-				<form method="post" action="productwritecontroller.jsp" enctype="multipart/form-data">
+				<form name="productform" onsubmit="return productcheck()" method="post" action="productwritecontroller.jsp" enctype="multipart/form-data">
 					<!-- 폼 : 양식 method="전송방식" action="RUL"  enctype="전송데이터 타입" onsubmit="조건메소드"  -->
 					
 					제품명  <input type="text" name="name" class="form-control"> <br>
