@@ -60,9 +60,43 @@ public class ProductDao {
 		return false;
 	
 	}
-		
-	
 	// 2. 力前 格废 炼雀 
+	public ArrayList<ProductDto> productlist() {
+		
+		ArrayList< ProductDto >productDtos = new ArrayList<ProductDto>();
+		
+		String SQL = "select * from product";
+		
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+			resultSet = preparedStatement.executeQuery();
+		
+			while( resultSet.next() ) {
+				ProductDto productDto = new ProductDto( 
+							resultSet.getInt(1) ,
+							resultSet.getString(2) ,
+							resultSet.getString(3) ,
+							resultSet.getInt(4) ,
+							resultSet.getString(5) ,
+							resultSet.getString(6) ,
+							resultSet.getInt(7) ,
+							resultSet.getString(8) ,
+							resultSet.getString(9) ,
+							resultSet.getInt(10) ,
+							resultSet.getInt(11) ,
+							resultSet.getInt(12) );
+				productDtos.add(productDto);
+			}
+			return productDtos;
+		}
+		catch (Exception e) {}
+		return null;
+	}
+	
+	
+	
+	
+	
 	
 	// 3. 力前 俺喊 炼雀 
 	
@@ -71,6 +105,17 @@ public class ProductDao {
 	// 5. 力前 昏力 
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 	
 	
 	
