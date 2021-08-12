@@ -43,6 +43,7 @@ jsp : html 내 태그 이용한 java 작성
 	4. 링크[ 페이지 이동 ]  
 		html : <a href=url >
 		js : location.href=url
+				history.back() : 전페이지 
 		jsp : response.sendRedirect( url ) 
 		
 				

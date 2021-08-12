@@ -34,19 +34,21 @@
 					가격   <input type="text" name="price" class="form-control"> <br>
 					제조사  <input type="text" name="manufacturer" class="form-control"> <br>
 					
-					분류 <input type="radio" name="category"> 스페셜&할인팩
-					<input type="radio" name="category"> 프리미엄
-					<input type="radio" name="category"> 와퍼
-					<input type="radio" name="category"> 주니어&버거
-					<input type="radio" name="category"> 올데이킹&치킨버거
-					<input type="radio" name="category"> 사이드
-					<input type="radio" name="category"> 음료&디저트
+					분류 
+					<input type="radio" name="category" value="스페셜&할인팩" checked="checked"> 스페셜&할인팩
+					<input type="radio" name="category" value="프리미엄"> 프리미엄
+					<input type="radio" name="category" value="와퍼"> 와퍼
+					<input type="radio" name="category" value="주니어&버거"> 주니어&버거
+					<input type="radio" name="category" value="올데이킹&치킨버거"> 올데이킹&치킨버거
+					<input type="radio" name="category" value="사이드"> 사이드
+					<input type="radio" name="category" value="음료&디저트"> 음료&디저트
 					<br> <br> 
 					
 					재고 <input type="text" name="stock" class="form-control"> <br>
 					출시일 <input type="date" name="releasedate" class="form-control"> <br>
 					이미지 <input type="file" name="img" class="form-control"> <br>
 					<input type="submit" value="등록" class="form-control" >
+					
 				</form>
 				
 			</div>
