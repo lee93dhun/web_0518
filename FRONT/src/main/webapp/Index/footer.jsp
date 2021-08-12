@@ -22,7 +22,7 @@
 			return false;
 		}
 		// 가격 입력이 없거나 문자가 포함되어 있으면 X
-		if( productform.price.value.lenth == 0  || isNaN( productform.price.value) ){
+		if( productform.price.value.length == 0  || isNaN( productform.price.value) ){
 			alert("가격은 숫자로 입력해주세요");		// isNaN( 숫자 ) : false		숫자가 아니면 true 반환
 			return false;						// isNaN("숫자") : false => 숫자반환 
 		}										// isNaN(숫자+문자) : true
@@ -33,7 +33,7 @@
 		}
 		
 		// 재고 입력이 없거나 문자가 포함되어 있으면 X
-		if( productform.stock.value.lenth == 0  || isNaN( productform.stock.value) ){
+		if( productform.stock.value.length == 0  || isNaN( productform.stock.value) ){
 			alert("가격은 숫자로 입력해주세요");		// isNaN( 숫자 ) : false		숫자가 아니면 true 반환
 			return false;						// isNaN("숫자") : false => 숫자반환 
 		}										// isNaN(숫자+문자) : true
